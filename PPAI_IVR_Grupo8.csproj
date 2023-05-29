@@ -57,6 +57,7 @@
     <Compile Include="EntityLayer\CategoriaLlamada.cs" />
     <Compile Include="EntityLayer\Cliente.cs" />
     <Compile Include="EntityLayer\Estado.cs" />
+    <Compile Include="EntityLayer\Llamada.cs" />
     <Compile Include="EntityLayer\OpcionLlamada.cs" />
     <Compile Include="EntityLayer\OpcionValidacion.cs" />
     <Compile Include="EntityLayer\SubOpcionLlamada.cs" />
