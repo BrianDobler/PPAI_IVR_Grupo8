@@ -53,6 +53,14 @@
     <Compile Include="CapaDePresentacion\PantallaRespuestaOperador.Designer.cs">
       <DependentUpon>PantallaRespuestaOperador.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityLayer\CambioEstado.cs" />
+    <Compile Include="EntityLayer\CategoriaLlamada.cs" />
+    <Compile Include="EntityLayer\Cliente.cs" />
+    <Compile Include="EntityLayer\Estado.cs" />
+    <Compile Include="EntityLayer\OpcionLlamada.cs" />
+    <Compile Include="EntityLayer\OpcionValidacion.cs" />
+    <Compile Include="EntityLayer\SubOpcionLlamada.cs" />
+    <Compile Include="EntityLayer\Validacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,7 +86,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CapaDePersistencia\" />
     <Folder Include="CapaLogicaDeNegocio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
