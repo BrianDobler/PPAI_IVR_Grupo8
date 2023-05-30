@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.DateTime;
+//using System.DateTime;
 
 namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 {
@@ -11,9 +11,10 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     {
     }
 
+    /*
     public void validarOpcSeleccionada()
     {
-
+        
     }
 
     private void obtenerLlamadaActual()
@@ -61,6 +62,6 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     {
         // se instancia al caso de uso 28
     }
-
+    */
 
 }
