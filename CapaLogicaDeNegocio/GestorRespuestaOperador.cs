@@ -11,10 +11,18 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     {
     }
 
+<<<<<<< HEAD
     //public void validarOpcSeleccionada()
     //{
 
     //}
+=======
+    /*
+    public void validarOpcSeleccionada()
+    {
+        
+    }
+>>>>>>> fae4e7c4418973e39e4b9240e41d5d9e2ceccf9a
 
     //private void obtenerLlamadaActual()
     //{
@@ -35,5 +43,36 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     //private void buscarDatosLlamada()
     //{
 
+<<<<<<< HEAD
     //}
+=======
+    }
+
+    public void tomarRstaValidacion()
+    {
+
+    }
+
+    private void validarRespuesta()
+    {
+        //luego de la validacion se debe instanciar al objeto actual llamada (metodo obtenerRstaValidacion)
+    }
+
+    public void tomarDescripcionAccion()
+    {
+        
+    }
+
+    public void tomarConfirmacion()
+    {
+        
+    }
+
+    public void llamarCURegistrarAccionRequerida()
+    {
+        // se instancia al caso de uso 28
+    }
+    */
+
+>>>>>>> fae4e7c4418973e39e4b9240e41d5d9e2ceccf9a
 }

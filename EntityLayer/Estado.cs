@@ -21,6 +21,15 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Nombre = nombre;
         }
 
+        public Boolean esFinalizada()
+        {
+            return false; // necesitamos chequear un atributo
+        }
+
+        public Boolean esIniciada()
+        {
+            return false;
+        }
 
     }
 }
