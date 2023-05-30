@@ -36,4 +36,31 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     {
 
     }
+
+    public void tomarRstaValidacion()
+    {
+
+    }
+
+    private void validarRespuesta()
+    {
+        //luego de la validacion se debe instanciar al objeto actual llamada (metodo obtenerRstaValidacion)
+    }
+
+    public void tomarDescripcionAccion()
+    {
+        
+    }
+
+    public void tomarConfirmacion()
+    {
+        
+    }
+
+    public void llamarCURegistrarAccionRequerida()
+    {
+        // se instancia al caso de uso 28
+    }
+
+
 }
