@@ -11,41 +11,31 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     {
     }
 
-<<<<<<< HEAD
-    //public void validarOpcSeleccionada()
-    //{
-
-    //}
-=======
     /*
     public void validarOpcSeleccionada()
     {
         
     }
->>>>>>> fae4e7c4418973e39e4b9240e41d5d9e2ceccf9a
 
-    //private void obtenerLlamadaActual()
-    //{
-    //    // deberiamos llamara al metodo esEnCurso
-    //    // deberiamos llamara al metodo esDeTucliente
-    //}
+    private void obtenerLlamadaActual()
+    {
+        // deberiamos llamara al metodo esEnCurso
+        // deberiamos llamara al metodo esDeTucliente
+    }
 
-    //private void marcarllamadaEnCurso()
-    //{
+    private void marcarllamadaEnCurso()
+    {
 
-    //}
+    }
 
-    //private void obtenerFechaHoraActual()
-    //{
-    //    DateTime currentDateTime = DateTime.Now;
-    //}
+    private void obtenerFechaHoraActual()
+    {
+        DateTime currentDateTime = DateTime.Now;
+    }
 
-    //private void buscarDatosLlamada()
-    //{
+    private void buscarDatosLlamada()
+    {
 
-<<<<<<< HEAD
-    //}
-=======
     }
 
     public void tomarRstaValidacion()
@@ -74,5 +64,4 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
     }
     */
 
->>>>>>> fae4e7c4418973e39e4b9240e41d5d9e2ceccf9a
 }
