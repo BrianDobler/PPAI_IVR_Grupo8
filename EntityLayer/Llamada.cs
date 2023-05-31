@@ -50,5 +50,36 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.seleccionadaSubopc = seleccionadaSubopc;
         }
 
+
+        public static Llamada esDeTuCliente(List<Llamada> lLlamada, Cliente clt)
+        {
+            Llamada actualLLamada = new Llamada();
+            foreach (Llamada ll in lLlamada)
+            {
+                if (ll.Cliente.Equals(clt))
+                {
+                    actualLLamada = ll;
+                }
+
+            }
+            return actualLLamada;
+        }
+
+        public static void setLlamadaEnCurso(Llamada actualLlamada, Estado enCurso)
+        {
+            actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today,enCurso));
+
+        }
+
+        public static void finalizar(Llamada actualLlamada, Estado finalizado)
+        {
+            actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today, finalizado));
+
+        }
+
+
+
+
+
     }
 }
