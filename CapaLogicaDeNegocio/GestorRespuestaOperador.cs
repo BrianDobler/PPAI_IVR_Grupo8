@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 {
-    internal class GestorRespuestaOperador
+    public class GestorRespuestaOperador
     {
     }
 
