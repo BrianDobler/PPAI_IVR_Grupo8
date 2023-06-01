@@ -97,9 +97,18 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
+        /*
+        public Llamada tomarDatosLlamada()
+        {
+            getNombreClienteLlamada()
+        }        
 
-
-
+        public String getNombreClienteLlamada()
+        {
+            return this.cliente.getNombreClienteLlamada; // donde esta la instancia de este cliente ? 
+        }
+        */
+        
 
     }
 }
