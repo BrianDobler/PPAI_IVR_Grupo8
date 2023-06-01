@@ -97,18 +97,16 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        /*
-        public Llamada tomarDatosLlamada()
+        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada)
         {
-            getNombreClienteLlamada()
+            var dictionary = getNombreClienteLlamada(actualLLamada.cliente);
+            //OpcionLlamada.getNombreOpcLlamada();// deberia haber una instancia "seleccionada" de OpcionLlamada
+            //OpcionLlamada.esCategoriaCte(); // idem arriba
         }        
 
-        public String getNombreClienteLlamada()
+        public String getNombreClienteLlamada(Cliente cliente)
         {
-            return this.cliente.getNombreClienteLlamada; // donde esta la instancia de este cliente ? 
+            return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
         }
-        */
-        
-
     }
 }

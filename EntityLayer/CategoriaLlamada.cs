@@ -25,5 +25,10 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.nombre = nombre;
             this.lopcionLlamada = lopcionLlamada;
         }
+
+        public Categoria esCategoriaSeleccionada()
+        {
+            return null;
+        }
     }
 }
