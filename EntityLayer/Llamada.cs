@@ -99,7 +99,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada)
         {
-            var dictionary = getNombreClienteLlamada(actualLLamada.cliente);
+            var dictionary = getNombreClienteLlamada(actualLlamada.Cliente);
             //OpcionLlamada.getNombreOpcLlamada();// deberia haber una instancia "seleccionada" de OpcionLlamada
             //OpcionLlamada.esCategoriaCte(); // idem arriba
         }        
@@ -108,5 +108,17 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
         }
+
+
+        public static bool ObtenerRstasValidacion(Dictionary<Validacion,OpcionValidacion> param)
+        {
+            bool res = false;
+            res = SubOpcionLlamada.ObtenerRstasValidacion(param);
+
+            return res;
+        }
+        //{
+
+        //}
     }
 }

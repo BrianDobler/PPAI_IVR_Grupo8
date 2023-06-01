@@ -26,6 +26,24 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.opcValidaciones = opcValidaciones;
         }
 
+        public static bool esRstaCorrecta(Validacion val, OpcionValidacion seleccionada)
+        {
+            OpcionValidacion res = new OpcionValidacion();
+            foreach(OpcionValidacion opcValidacion in val.OpcValidaciones)
+            {
+                res = OpcionValidacion.esCorrecta(opcValidacion); //ideadoi para buscar una sola respuesta correcta entre muchas opciones validacion. si es ok me trae el objeto
+               
+            }
+
+            if (res.Equals(seleccionada))
+            {
+                return true;
+            }
+            else { return false; }
+            
+
+
+        }
 
     }
 }

@@ -36,5 +36,17 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return dictionary;
         }
 
+
+        public static bool ObtenerRstasValidacion(Dictionary<Validacion, OpcionValidacion> param)
+        {
+            bool res = false;
+            foreach(KeyValuePair<Validacion, OpcionValidacion> validacion in param) {
+
+                res = Validacion.esRstaCorrecta(validacion.Key, validacion.Value);
+            }
+
+            return res;
+        }
+
     }
 }
