@@ -10,7 +10,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
     {
         private string descripcionOperador;
         private string detalleAccionRequerida;
-        private int duracion;
+        private DateTime duracion;
         private string observacionAuditor;
         private Cliente cliente;
         private List<CambioEstado> lcambioestado;
@@ -22,7 +22,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public string DescripcionOperador { get => descripcionOperador; set => descripcionOperador = value; }
         public string DetalleAccionRequerida { get => detalleAccionRequerida; set => detalleAccionRequerida = value; }
-        public int Duracion { get => duracion; set => duracion = value; }
+        public DateTime Duracion { get => duracion; set => duracion = value; }
         public string ObservacionAuditor { get => observacionAuditor; set => observacionAuditor = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
         public List<CambioEstado> Lcambioestado { get => lcambioestado; set => lcambioestado = value; }
@@ -33,7 +33,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
         public Llamada(string descripcionOperador, 
                       string detalleAccionRequerida, 
-                      int duracion, 
+                      DateTime duracion, 
                       string observacionAuditor, 
                       Cliente cliente, 
                       List<CambioEstado> lcambioestado, 
@@ -78,9 +78,11 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
 
 
-        public static void calcularDuracion(Llamada actualLlamada, DateTime fechaInicio) 
-        { 
-
+        public static void calcularDuracion(Llamada actualLlamada, DateTime fechafinalizacion) 
+        {
+            var fechamin = obtenerFechaHoraMinima(actualLlamada.Lcambioestado);
+            var duracion = fechafinalizacion.Subtract(fechamin);
+            actualLlamada.Duracion = Convert.ToDateTime(duracion);
         }
 
         public static DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
