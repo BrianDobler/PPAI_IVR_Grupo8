@@ -98,14 +98,20 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        //public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada)
-        //{
-        //    //var dictionary = getNombreClienteLlamada(actualLlamada.Cliente);
-        //    //OpcionLlamada.getNombreOpcLlamada();// deberia haber una instancia "seleccionada" de OpcionLlamada
-        //    //OpcionLlamada.esCategoriaCte(); // idem arriba
+        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
+        {
+            Dictionary<string,object> dic = new Dictionary<string,object>();
 
-        //    return;
-        //}        
+            var nomCliente = getNombreClienteLlamada(actualLlamada.Cliente);
+            var nomOpc = actualLlamada.Seleccionadaopc.Nombre;
+            var cte = OpcionLlamada.esCategoriaCte(actualLlamada.Seleccionadaopc, cat); 
+
+            dic.Add("Nom_cliente", nomCliente);
+            dic.Add("Nom_Opcion", nomOpc);
+            dic.Add("categoria", cte);
+
+           return dic;
+        }        
 
         public String getNombreClienteLlamada(Cliente cliente)
         {

@@ -31,20 +31,20 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public static CategoriaLlamada esCategoriaCte(OpcionLlamada opcSeleccionada, List<CategoriaLlamada> cat)
         {
-        CategoriaLlamada  ct= new CategoriaLlamada();
+        CategoriaLlamada ct = new CategoriaLlamada();
            foreach(CategoriaLlamada c in cat)
             {
                     var res = CategoriaLlamada.esCategoriaSeleccionada(opcSeleccionada,c);
 
-                if (res)
-                {
-                    ct = c;
-                    break;
+                    if (res)
+                    {
+                        ct = c;
+                        break;
+                    }
                 }
-            }
-           
            return ct;
-        }
+
+           }
         //{
 
         //}
