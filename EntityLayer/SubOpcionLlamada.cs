@@ -28,7 +28,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
         {
-            Dictionary<String, object> dictionary = new Dictionary();
+            Dictionary<String, object> dictionary = new Dictionary<string, object>();
             foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
             {   
                 dictionary.Add(this.Nombre, validacion);

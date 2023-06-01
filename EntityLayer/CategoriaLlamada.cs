@@ -26,9 +26,17 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.lopcionLlamada = lopcionLlamada;
         }
 
-        public Categoria esCategoriaSeleccionada()
+        public static bool esCategoriaSeleccionada(OpcionLlamada opcSeleccionada,CategoriaLlamada cat)
         {
-            return null;
+            bool res = false;
+            foreach(OpcionLlamada opcLlamada in cat.LopcionLlamada)
+            { 
+                if (opcLlamada.Equals(opcSeleccionada))
+                {
+                    res = true;
+                }
+            }
+            return res;
         }
     }
 }

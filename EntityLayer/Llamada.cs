@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI_IVR_Grupo8.EntityLayer
 {
@@ -97,12 +98,14 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada)
-        {
-            var dictionary = getNombreClienteLlamada(actualLlamada.Cliente);
-            //OpcionLlamada.getNombreOpcLlamada();// deberia haber una instancia "seleccionada" de OpcionLlamada
-            //OpcionLlamada.esCategoriaCte(); // idem arriba
-        }        
+        //public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada)
+        //{
+        //    //var dictionary = getNombreClienteLlamada(actualLlamada.Cliente);
+        //    //OpcionLlamada.getNombreOpcLlamada();// deberia haber una instancia "seleccionada" de OpcionLlamada
+        //    //OpcionLlamada.esCategoriaCte(); // idem arriba
+
+        //    return;
+        //}        
 
         public String getNombreClienteLlamada(Cliente cliente)
         {
