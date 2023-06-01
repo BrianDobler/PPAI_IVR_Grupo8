@@ -78,6 +78,24 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
 
 
+        public static void calcularDuracion(Llamada actualLlamada, DateTime fechaInicio) 
+        { 
+
+        }
+
+        public static DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
+        {
+
+            DateTime cEstadofechaMin = lCestado
+                              //.Select(x => x.FechaHoraInicio < fechaInicio).FirstOrDefault();
+                              .Min(x => x.FechaHoraInicio);
+            //var fechaMin = cEstadofechaMin.FechaHoraInicio;
+
+            return cEstadofechaMin;
+        
+        }
+
+
 
 
 

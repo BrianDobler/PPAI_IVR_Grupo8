@@ -41,6 +41,16 @@
             this.panelContenedorMedio = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelContenedorDerecho = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelDerecho = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.bunifuRadioButton7 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton8 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton5 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton6 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton3 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton4 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton2 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.bunifuRadioButton1 = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.cmbAccion = new System.Windows.Forms.ComboBox();
             this.panelMedio = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnConfirmar = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -66,6 +76,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelIzquierdo = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnColgarLlamada = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.lblHora = new System.Windows.Forms.Label();
             this.panelGradIzq = new Bunifu.UI.WinForms.BunifuGradientPanel();
@@ -77,17 +88,6 @@
             this.panelSuperior = new Bunifu.UI.WinForms.BunifuPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblRptaOperador = new Bunifu.UI.WinForms.BunifuLabel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.bunifuRadioButton1 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton2 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton3 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton4 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton5 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton6 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton7 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton8 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.panelContenedorMedio.SuspendLayout();
             this.panelContenedorDerecho.SuspendLayout();
             this.panelDerecho.SuspendLayout();
@@ -170,6 +170,174 @@
             this.panelDerecho.Size = new System.Drawing.Size(148, 583);
             this.panelDerecho.TabIndex = 0;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(87, 4);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 18);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "NO";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(32, 4);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 18);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "SI";
+            // 
+            // bunifuRadioButton7
+            // 
+            this.bunifuRadioButton7.AllowBindingControlLocation = false;
+            this.bunifuRadioButton7.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton7.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton7.BorderThickness = 1;
+            this.bunifuRadioButton7.Checked = false;
+            this.bunifuRadioButton7.Location = new System.Drawing.Point(92, 346);
+            this.bunifuRadioButton7.Name = "bunifuRadioButton7";
+            this.bunifuRadioButton7.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton7.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton7.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton7.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton7.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton7.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton7.TabIndex = 8;
+            this.bunifuRadioButton7.Text = null;
+            // 
+            // bunifuRadioButton8
+            // 
+            this.bunifuRadioButton8.AllowBindingControlLocation = false;
+            this.bunifuRadioButton8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton8.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton8.BorderThickness = 1;
+            this.bunifuRadioButton8.Checked = false;
+            this.bunifuRadioButton8.Location = new System.Drawing.Point(33, 346);
+            this.bunifuRadioButton8.Name = "bunifuRadioButton8";
+            this.bunifuRadioButton8.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton8.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton8.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton8.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton8.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton8.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton8.TabIndex = 7;
+            this.bunifuRadioButton8.Text = null;
+            // 
+            // bunifuRadioButton5
+            // 
+            this.bunifuRadioButton5.AllowBindingControlLocation = false;
+            this.bunifuRadioButton5.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton5.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton5.BorderThickness = 1;
+            this.bunifuRadioButton5.Checked = false;
+            this.bunifuRadioButton5.Location = new System.Drawing.Point(92, 245);
+            this.bunifuRadioButton5.Name = "bunifuRadioButton5";
+            this.bunifuRadioButton5.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton5.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton5.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton5.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton5.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton5.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton5.TabIndex = 6;
+            this.bunifuRadioButton5.Text = null;
+            // 
+            // bunifuRadioButton6
+            // 
+            this.bunifuRadioButton6.AllowBindingControlLocation = false;
+            this.bunifuRadioButton6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton6.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton6.BorderThickness = 1;
+            this.bunifuRadioButton6.Checked = false;
+            this.bunifuRadioButton6.Location = new System.Drawing.Point(33, 245);
+            this.bunifuRadioButton6.Name = "bunifuRadioButton6";
+            this.bunifuRadioButton6.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton6.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton6.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton6.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton6.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton6.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton6.TabIndex = 5;
+            this.bunifuRadioButton6.Text = null;
+            // 
+            // bunifuRadioButton3
+            // 
+            this.bunifuRadioButton3.AllowBindingControlLocation = false;
+            this.bunifuRadioButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton3.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton3.BorderThickness = 1;
+            this.bunifuRadioButton3.Checked = false;
+            this.bunifuRadioButton3.Location = new System.Drawing.Point(92, 147);
+            this.bunifuRadioButton3.Name = "bunifuRadioButton3";
+            this.bunifuRadioButton3.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton3.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton3.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton3.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton3.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton3.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton3.TabIndex = 4;
+            this.bunifuRadioButton3.Text = null;
+            // 
+            // bunifuRadioButton4
+            // 
+            this.bunifuRadioButton4.AllowBindingControlLocation = false;
+            this.bunifuRadioButton4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton4.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton4.BorderThickness = 1;
+            this.bunifuRadioButton4.Checked = false;
+            this.bunifuRadioButton4.Location = new System.Drawing.Point(33, 147);
+            this.bunifuRadioButton4.Name = "bunifuRadioButton4";
+            this.bunifuRadioButton4.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton4.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton4.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton4.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton4.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton4.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton4.TabIndex = 3;
+            this.bunifuRadioButton4.Text = null;
+            // 
+            // bunifuRadioButton2
+            // 
+            this.bunifuRadioButton2.AllowBindingControlLocation = false;
+            this.bunifuRadioButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton2.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton2.BorderThickness = 1;
+            this.bunifuRadioButton2.Checked = false;
+            this.bunifuRadioButton2.Location = new System.Drawing.Point(92, 48);
+            this.bunifuRadioButton2.Name = "bunifuRadioButton2";
+            this.bunifuRadioButton2.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton2.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton2.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton2.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton2.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton2.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton2.TabIndex = 2;
+            this.bunifuRadioButton2.Text = null;
+            // 
+            // bunifuRadioButton1
+            // 
+            this.bunifuRadioButton1.AllowBindingControlLocation = false;
+            this.bunifuRadioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuRadioButton1.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.bunifuRadioButton1.BorderThickness = 1;
+            this.bunifuRadioButton1.Checked = true;
+            this.bunifuRadioButton1.Location = new System.Drawing.Point(33, 47);
+            this.bunifuRadioButton1.Name = "bunifuRadioButton1";
+            this.bunifuRadioButton1.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton1.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton1.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.bunifuRadioButton1.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuRadioButton1.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuRadioButton1.Size = new System.Drawing.Size(28, 28);
+            this.bunifuRadioButton1.TabIndex = 1;
+            this.bunifuRadioButton1.Text = null;
+            // 
             // cmbAccion
             // 
             this.cmbAccion.AccessibleName = "";
@@ -184,7 +352,7 @@
             "Denunciar Robo"});
             this.cmbAccion.Location = new System.Drawing.Point(15, 431);
             this.cmbAccion.Name = "cmbAccion";
-            this.cmbAccion.Size = new System.Drawing.Size(117, 30);
+            this.cmbAccion.Size = new System.Drawing.Size(117, 23);
             this.cmbAccion.Sorted = true;
             this.cmbAccion.TabIndex = 0;
             // 
@@ -220,7 +388,7 @@
             this.btnConfirmar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.BackgroundImage")));
             this.btnConfirmar.ButtonText = "Confirmar";
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.SeaGreen;
             this.btnConfirmar.IdleBorderThickness = 1;
             this.btnConfirmar.IdleCornerRadius = 20;
@@ -253,7 +421,7 @@
             this.txtbDescripcion.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtbDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtbDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbDescripcion.DefaultFont = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbDescripcion.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbDescripcion.DefaultText = "";
             this.txtbDescripcion.Enabled = false;
             this.txtbDescripcion.FillColor = System.Drawing.Color.White;
@@ -300,7 +468,7 @@
             this.txtbDescripcion.SelectionLength = 0;
             this.txtbDescripcion.SelectionStart = 0;
             this.txtbDescripcion.ShortcutsEnabled = true;
-            this.txtbDescripcion.Size = new System.Drawing.Size(592, 54);
+            this.txtbDescripcion.Size = new System.Drawing.Size(592, 39);
             this.txtbDescripcion.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtbDescripcion.TabIndex = 4;
             this.txtbDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -332,11 +500,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.BlanchedAlmond;
             this.label10.Location = new System.Drawing.Point(74, 31);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(453, 34);
+            this.label10.Size = new System.Drawing.Size(394, 24);
             this.label10.TabIndex = 11;
             this.label10.Text = "¿Podria asegurar que su tío se llama Ricardo?";
             // 
@@ -344,11 +512,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(239, 7);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 28);
+            this.label11.Size = new System.Drawing.Size(107, 20);
             this.label11.TabIndex = 6;
             this.label11.Text = "Pregunta 4: ";
             // 
@@ -373,11 +541,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(131, 35);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(330, 34);
+            this.label12.Size = new System.Drawing.Size(299, 24);
             this.label12.TabIndex = 11;
             this.label12.Text = "¿Su abuelo vive en Buenos Aires?";
             // 
@@ -385,11 +553,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(239, 7);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 28);
+            this.label13.Size = new System.Drawing.Size(107, 20);
             this.label13.TabIndex = 6;
             this.label13.Text = "Pregunta 3: ";
             // 
@@ -414,11 +582,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(71, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(453, 34);
+            this.label8.Size = new System.Drawing.Size(394, 24);
             this.label8.TabIndex = 11;
             this.label8.Text = "¿Podria asegurar que su tío se llama Ricardo?";
             // 
@@ -426,11 +594,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(239, 7);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 28);
+            this.label9.Size = new System.Drawing.Size(107, 20);
             this.label9.TabIndex = 6;
             this.label9.Text = "Pregunta 2: ";
             // 
@@ -455,11 +623,11 @@
             // 
             this.lblPreg1.AutoSize = true;
             this.lblPreg1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPreg1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreg1.ForeColor = System.Drawing.Color.Black;
             this.lblPreg1.Location = new System.Drawing.Point(70, 31);
             this.lblPreg1.Name = "lblPreg1";
-            this.lblPreg1.Size = new System.Drawing.Size(453, 34);
+            this.lblPreg1.Size = new System.Drawing.Size(394, 24);
             this.lblPreg1.TabIndex = 11;
             this.lblPreg1.Text = "¿Podria asegurar que su tío se llama Ricardo?";
             // 
@@ -467,11 +635,11 @@
             // 
             this.lblPregunta1.AutoSize = true;
             this.lblPregunta1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPregunta1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPregunta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta1.ForeColor = System.Drawing.Color.Black;
             this.lblPregunta1.Location = new System.Drawing.Point(241, 7);
             this.lblPregunta1.Name = "lblPregunta1";
-            this.lblPregunta1.Size = new System.Drawing.Size(106, 28);
+            this.lblPregunta1.Size = new System.Drawing.Size(107, 20);
             this.lblPregunta1.TabIndex = 6;
             this.lblPregunta1.Text = "Pregunta 1: ";
             // 
@@ -519,11 +687,11 @@
             // lblOpci
             // 
             this.lblOpci.AutoSize = true;
-            this.lblOpci.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpci.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOpci.ForeColor = System.Drawing.Color.White;
             this.lblOpci.Location = new System.Drawing.Point(14, 177);
             this.lblOpci.Name = "lblOpci";
-            this.lblOpci.Size = new System.Drawing.Size(129, 26);
+            this.lblOpci.Size = new System.Drawing.Size(114, 18);
             this.lblOpci.TabIndex = 13;
             this.lblOpci.Text = "Robo de Tarjeta";
             // 
@@ -561,44 +729,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 107);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 26);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(84, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 26);
+            this.label5.Size = new System.Drawing.Size(16, 18);
             this.label5.TabIndex = 12;
             this.label5.Text = "4";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(13, 128);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(107, 26);
+            this.lblNombre.Size = new System.Drawing.Size(95, 18);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Javier Zanetti";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(14, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 26);
+            this.label6.Size = new System.Drawing.Size(72, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = "Opción: ";
             // 
@@ -620,6 +788,18 @@
             this.panelIzquierdo.ShowBorders = true;
             this.panelIzquierdo.Size = new System.Drawing.Size(191, 583);
             this.panelIzquierdo.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(15, 442);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 18);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Duracion de llamada";
             // 
             // btnColgarLlamada
             // 
@@ -657,11 +837,11 @@
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
-            this.lblHora.Font = new System.Drawing.Font("Poppins Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
             this.lblHora.Location = new System.Drawing.Point(32, 462);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(100, 48);
+            this.lblHora.Size = new System.Drawing.Size(97, 31);
             this.lblHora.TabIndex = 14;
             this.lblHora.Text = "HORA";
             // 
@@ -690,44 +870,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(84, 161);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 26);
+            this.label4.Size = new System.Drawing.Size(32, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "128";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 26);
+            this.label3.Size = new System.Drawing.Size(70, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Equipo: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 26);
+            this.label2.Size = new System.Drawing.Size(118, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Rodrigo Aliendro";
             // 
             // lblOP
             // 
             this.lblOP.AutoSize = true;
-            this.lblOP.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOP.ForeColor = System.Drawing.Color.White;
             this.lblOP.Location = new System.Drawing.Point(13, 110);
             this.lblOP.Name = "lblOP";
-            this.lblOP.Size = new System.Drawing.Size(103, 26);
+            this.lblOP.Size = new System.Drawing.Size(89, 18);
             this.lblOP.TabIndex = 5;
             this.lblOP.Text = "Operador: ";
             // 
@@ -784,11 +964,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(422, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 26);
+            this.label7.Size = new System.Drawing.Size(146, 18);
             this.label7.TabIndex = 11;
             this.label7.Text = "Respuesta Operador";
             // 
@@ -798,7 +978,7 @@
             this.lblRptaOperador.AutoEllipsis = false;
             this.lblRptaOperador.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRptaOperador.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblRptaOperador.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRptaOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRptaOperador.ForeColor = System.Drawing.Color.White;
             this.lblRptaOperador.Location = new System.Drawing.Point(162, 13);
             this.lblRptaOperador.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -811,196 +991,16 @@
             this.lblRptaOperador.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblRptaOperador.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Poppins Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(15, 442);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(166, 26);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Duracion de llamada";
-            // 
-            // bunifuRadioButton1
-            // 
-            this.bunifuRadioButton1.AllowBindingControlLocation = false;
-            this.bunifuRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton1.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton1.BorderThickness = 1;
-            this.bunifuRadioButton1.Checked = false;
-            this.bunifuRadioButton1.Location = new System.Drawing.Point(33, 47);
-            this.bunifuRadioButton1.Name = "bunifuRadioButton1";
-            this.bunifuRadioButton1.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton1.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton1.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton1.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton1.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton1.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton1.TabIndex = 1;
-            this.bunifuRadioButton1.Text = null;
-            // 
-            // bunifuRadioButton2
-            // 
-            this.bunifuRadioButton2.AllowBindingControlLocation = false;
-            this.bunifuRadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton2.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton2.BorderThickness = 1;
-            this.bunifuRadioButton2.Checked = false;
-            this.bunifuRadioButton2.Location = new System.Drawing.Point(92, 48);
-            this.bunifuRadioButton2.Name = "bunifuRadioButton2";
-            this.bunifuRadioButton2.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton2.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton2.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton2.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton2.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton2.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton2.TabIndex = 2;
-            this.bunifuRadioButton2.Text = null;
-            // 
-            // bunifuRadioButton3
-            // 
-            this.bunifuRadioButton3.AllowBindingControlLocation = false;
-            this.bunifuRadioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton3.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton3.BorderThickness = 1;
-            this.bunifuRadioButton3.Checked = false;
-            this.bunifuRadioButton3.Location = new System.Drawing.Point(92, 147);
-            this.bunifuRadioButton3.Name = "bunifuRadioButton3";
-            this.bunifuRadioButton3.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton3.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton3.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton3.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton3.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton3.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton3.TabIndex = 4;
-            this.bunifuRadioButton3.Text = null;
-            // 
-            // bunifuRadioButton4
-            // 
-            this.bunifuRadioButton4.AllowBindingControlLocation = false;
-            this.bunifuRadioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton4.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton4.BorderThickness = 1;
-            this.bunifuRadioButton4.Checked = false;
-            this.bunifuRadioButton4.Location = new System.Drawing.Point(33, 147);
-            this.bunifuRadioButton4.Name = "bunifuRadioButton4";
-            this.bunifuRadioButton4.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton4.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton4.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton4.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton4.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton4.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton4.TabIndex = 3;
-            this.bunifuRadioButton4.Text = null;
-            // 
-            // bunifuRadioButton5
-            // 
-            this.bunifuRadioButton5.AllowBindingControlLocation = false;
-            this.bunifuRadioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton5.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton5.BorderThickness = 1;
-            this.bunifuRadioButton5.Checked = true;
-            this.bunifuRadioButton5.Location = new System.Drawing.Point(92, 245);
-            this.bunifuRadioButton5.Name = "bunifuRadioButton5";
-            this.bunifuRadioButton5.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton5.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton5.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton5.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton5.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton5.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton5.TabIndex = 6;
-            this.bunifuRadioButton5.Text = null;
-            // 
-            // bunifuRadioButton6
-            // 
-            this.bunifuRadioButton6.AllowBindingControlLocation = false;
-            this.bunifuRadioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton6.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton6.BorderThickness = 1;
-            this.bunifuRadioButton6.Checked = false;
-            this.bunifuRadioButton6.Location = new System.Drawing.Point(33, 245);
-            this.bunifuRadioButton6.Name = "bunifuRadioButton6";
-            this.bunifuRadioButton6.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton6.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton6.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton6.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton6.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton6.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton6.TabIndex = 5;
-            this.bunifuRadioButton6.Text = null;
-            // 
-            // bunifuRadioButton7
-            // 
-            this.bunifuRadioButton7.AllowBindingControlLocation = false;
-            this.bunifuRadioButton7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton7.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton7.BorderThickness = 1;
-            this.bunifuRadioButton7.Checked = false;
-            this.bunifuRadioButton7.Location = new System.Drawing.Point(92, 346);
-            this.bunifuRadioButton7.Name = "bunifuRadioButton7";
-            this.bunifuRadioButton7.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton7.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton7.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton7.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton7.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton7.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton7.TabIndex = 8;
-            this.bunifuRadioButton7.Text = null;
-            // 
-            // bunifuRadioButton8
-            // 
-            this.bunifuRadioButton8.AllowBindingControlLocation = false;
-            this.bunifuRadioButton8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton8.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton8.BorderThickness = 1;
-            this.bunifuRadioButton8.Checked = false;
-            this.bunifuRadioButton8.Location = new System.Drawing.Point(33, 346);
-            this.bunifuRadioButton8.Name = "bunifuRadioButton8";
-            this.bunifuRadioButton8.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton8.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton8.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton8.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton8.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton8.Size = new System.Drawing.Size(28, 28);
-            this.bunifuRadioButton8.TabIndex = 7;
-            this.bunifuRadioButton8.Text = null;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(32, 4);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 26);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "SI";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(87, 4);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 26);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "NO";
-            // 
             // PantallaRespuestaOperador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(990, 625);
             this.Controls.Add(this.panelContenedorMedio);
             this.Controls.Add(this.panelContenedorIzq);
             this.Controls.Add(this.panelSuperior);
-            this.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximumSize = new System.Drawing.Size(990, 625);

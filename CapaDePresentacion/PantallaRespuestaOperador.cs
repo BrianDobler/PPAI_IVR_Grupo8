@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_IVR_Grupo8.EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,20 @@ namespace PPAI_IVR_Grupo8
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
+
+            Estado estado1 = new Estado("INICIADO");
+            Estado estado2 = new Estado("EnCurso");
+            CambioEstado cestado1 = new CambioEstado(DateTime.Today.AddDays(-1), estado1);
+            CambioEstado cestado2 = new CambioEstado(DateTime.Today.AddDays(10), estado2);
+            CambioEstado cestado3 = new CambioEstado(DateTime.Today.AddDays(-15), estado2);
+
+            List<CambioEstado> lcestadoTEST = new List<CambioEstado>();
+            lcestadoTEST.Add(cestado1);
+            lcestadoTEST.Add(cestado2);
+            lcestadoTEST.Add(cestado3);
+
+            MessageBox.Show((DateTime.Today.Subtract(Llamada.obtenerFechaHoraMinima(lcestadoTEST)).ToString()));
+
         }
 
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
@@ -48,5 +63,6 @@ namespace PPAI_IVR_Grupo8
                 Application.Exit();
             }
         }
+
     }
 }
