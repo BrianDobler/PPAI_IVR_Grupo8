@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PPAI_IVR_Grupo8
 {
@@ -17,24 +18,29 @@ namespace PPAI_IVR_Grupo8
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
-
-            Estado estado1 = new Estado("INICIADO");
-            Estado estado2 = new Estado("EnCurso");
-            CambioEstado cestado1 = new CambioEstado(DateTime.Today.AddDays(-1), estado1);
-            CambioEstado cestado2 = new CambioEstado(DateTime.Today.AddDays(10), estado2);
-            CambioEstado cestado3 = new CambioEstado(DateTime.Today.AddDays(-15), estado2);
-
-            List<CambioEstado> lcestadoTEST = new List<CambioEstado>();
-            lcestadoTEST.Add(cestado1);
-            lcestadoTEST.Add(cestado2);
-            lcestadoTEST.Add(cestado3);
-
-            MessageBox.Show((DateTime.Today.Subtract(Llamada.obtenerFechaHoraMinima(lcestadoTEST)).ToString()));
+            cambiarFormatoDataGrid();
 
         }
 
-        //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        #region MetodosDeInterfaz
+
+        private void cambiarFormatoDataGrid()
+        {
+            txtbDescripcion.Height = 100;
+            cmbAccion.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            dgValidacion.DefaultCellStyle.BackColor = Color.White;
+            dgValidacion.DefaultCellStyle.ForeColor = Color.Black;
+            dgValidacion.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 110, 86);
+            dgValidacion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgValidacion.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgValidacion.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+        }
+
+
+    //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
+    [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -54,6 +60,9 @@ namespace PPAI_IVR_Grupo8
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
         }
+
+        #endregion
+
 
 
         private void btnColgarLlamada_Click(object sender, EventArgs e)
