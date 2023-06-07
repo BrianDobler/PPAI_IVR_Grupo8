@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI_IVR_Grupo8.EntityLayer
 {
@@ -10,7 +11,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
     {
         private string descripcionOperador;
         private string detalleAccionRequerida;
-        private DateTime duracion;
+        private int duracion;
         private string observacionAuditor;
         private Cliente cliente;
         private List<CambioEstado> lcambioestado;
@@ -22,7 +23,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public string DescripcionOperador { get => descripcionOperador; set => descripcionOperador = value; }
         public string DetalleAccionRequerida { get => detalleAccionRequerida; set => detalleAccionRequerida = value; }
-        public DateTime Duracion { get => duracion; set => duracion = value; }
+        public int Duracion { get => duracion; set => duracion = value; }
         public string ObservacionAuditor { get => observacionAuditor; set => observacionAuditor = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
         public List<CambioEstado> Lcambioestado { get => lcambioestado; set => lcambioestado = value; }
@@ -33,7 +34,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
         public Llamada(string descripcionOperador, 
                       string detalleAccionRequerida, 
-                      DateTime duracion, 
+                      int duracion, 
                       string observacionAuditor, 
                       Cliente cliente, 
                       List<CambioEstado> lcambioestado, 
@@ -82,7 +83,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             var fechamin = obtenerFechaHoraMinima(actualLlamada.Lcambioestado);
             var duracion = fechafinalizacion.Subtract(fechamin);
-            actualLlamada.Duracion = Convert.ToDateTime(duracion);
+            actualLlamada.Duracion = Convert.ToInt16(duracion);
         }
 
         public static DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
@@ -97,18 +98,36 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        /*
-        public Llamada tomarDatosLlamada()
+        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
         {
-            getNombreClienteLlamada()
+            Dictionary<string,object> dic = new Dictionary<string,object>();
+
+            var nomCliente = getNombreClienteLlamada(actualLlamada.Cliente);
+            var nomOpc = actualLlamada.Seleccionadaopc.Nombre;
+            var cte = OpcionLlamada.esCategoriaCte(actualLlamada.Seleccionadaopc, cat); 
+
+            dic.Add("Nom_cliente", nomCliente);
+            dic.Add("Nom_Opcion", nomOpc);
+            dic.Add("categoria", cte);
+
+           return dic;
         }        
 
-        public String getNombreClienteLlamada()
+        public String getNombreClienteLlamada(Cliente cliente)
         {
-            return this.cliente.getNombreClienteLlamada; // donde esta la instancia de este cliente ? 
+            return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
         }
-        */
-        
 
+
+        public static bool ObtenerRstasValidacion(Dictionary<Validacion,OpcionValidacion> param)
+        {
+            bool res = false;
+            res = SubOpcionLlamada.ObtenerRstasValidacion(param);
+
+            return res;
+        }
+        //{
+
+        //}
     }
 }

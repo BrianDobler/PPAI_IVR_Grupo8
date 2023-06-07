@@ -23,5 +23,16 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
 
 
+        public static OpcionValidacion esCorrecta(OpcionValidacion val)
+        {
+            if (val.Correcta == true) 
+            {
+                var res = val;
+            }
+
+            return val;
+
+        }
+
     }
 }

@@ -25,5 +25,34 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.nombre = nombre;
             this.lValidacion = lValidacion;
         }
+
+        public Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
+        {
+            Dictionary<String, object> dictionary = new Dictionary<string, object>();
+            dictionary.Add("Nombre_opc", subOpcionLlamadaSeleccionada.Nombre);
+            dictionary.Add("Nombre_opc", subOpcionLlamadaSeleccionada.NroOrden);
+            var count = 0;
+
+            foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
+            {
+                count = count++;
+
+                dictionary.Add("Validacion"+count.ToString(), validacion);
+            }
+            return dictionary;
+        }
+
+
+        public static bool ObtenerRstasValidacion(Dictionary<Validacion, OpcionValidacion> param)
+        {
+            bool res = false;
+            foreach(KeyValuePair<Validacion, OpcionValidacion> validacion in param) {
+
+                res = Validacion.esRstaCorrecta(validacion.Key, validacion.Value);
+            }
+
+            return res;
+        }
+
     }
 }
