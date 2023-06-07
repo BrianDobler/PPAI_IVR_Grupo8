@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PPAI_IVR_Grupo8.EntityLayer
 {
-    public  class Estado
+    public class Estado
     {
         private string nombre;
 
@@ -21,13 +21,28 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Nombre = nombre;
         }
 
-        public Boolean esFinalizada()
+        public static Boolean esFinalizada(Estado est)
         {
-            return false; // necesitamos chequear un atributo
+            if (est.nombre == "Finalizada")
+            {
+                return true;
+
+            }
+            return false;
         }
 
-        public Boolean esIniciada()
+        public static Boolean esIniciada()
         {
+            return false;
+        }
+
+        public static Boolean esEnCurso (Estado est)
+        {
+            if (est.nombre == "enCurso")
+            {
+                return true;
+
+            }
             return false;
         }
 
