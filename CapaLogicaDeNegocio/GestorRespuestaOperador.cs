@@ -121,6 +121,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
 
             clienteAct = new Cliente(38985699, "matias comba", 3513482979);
+            this.pantalla.lblNombre.Text = clienteAct.NombreCompleto1;
             //aca levanta la pregunta o es la que le ofrecemos al cliente 
 
             //corresponde a la validacion que edad tiene actualmente
