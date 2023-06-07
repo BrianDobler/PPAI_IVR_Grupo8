@@ -96,10 +96,14 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada5;
         List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
 
+        private PantallaRespuestaOperador pantalla;
+
         Llamada llamadaAct; //Esta es la llamada en curso
 
-        public GestorRespuestaOperador()
+        public GestorRespuestaOperador(PantallaRespuestaOperador pantalla)
         {
+            this.pantalla = pantalla;
+
             //Seteo de cada uno de los estados posibles
             estadoIniciada = new Estado("Iniciada");
             estadoEnCurso = new Estado("enCurso");
