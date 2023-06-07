@@ -98,7 +98,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
+        public static Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
         {
             Dictionary<string,object> dic = new Dictionary<string,object>();
 
