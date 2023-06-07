@@ -113,7 +113,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
            return dic;
         }        
 
-        public String getNombreClienteLlamada(Cliente cliente)
+        public static String getNombreClienteLlamada(Cliente cliente)
         {
             return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
         }

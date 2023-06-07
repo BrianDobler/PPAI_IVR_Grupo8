@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PPAI_IVR_Grupo8.EntityLayer; //ADD
-using PPAI_IVR_Grupo8.CapaDePresentacion;
 //using System.DateTime;
 
 namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
@@ -97,14 +96,10 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada5;
         List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
 
-        private PantallaRespuestaOperador pantalla;
-
         Llamada llamadaAct; //Esta es la llamada en curso
 
-        public GestorRespuestaOperador(PantallaRespuestaOperador pantalla)
+        public GestorRespuestaOperador()
         {
-            this.pantalla = pantalla;
-            
             //Seteo de cada uno de los estados posibles
             estadoIniciada = new Estado("Iniciada");
             estadoEnCurso = new Estado("enCurso");
@@ -330,9 +325,13 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         }
         public void validarOpcSeleccionada()
         {
+            var dicDatosLlamada = new Dictionary<string, object>();
+
             Estado eEnCurso = new Estado();
             eEnCurso = obtenerLlamadaActual(ListEstados);
             marcarllamadaEnCurso(eEnCurso);
+
+            dicDatosLlamada = buscarDatosLlamada();
             
         }
 
@@ -358,12 +357,21 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         private DateTime obtenerFechaHoraActual()
         {
-            return DateTime.Today;
+            return DateTime.Today; //revisar si esta bien aplicado el patron altacohesion porque esto lo esta obteniendo en la clase
         }
 
-        private void buscarDatosLlamada()
+        private Dictionary<string,object> buscarDatosLlamada()
         {
+            Dictionary<string,object> dicDatosLlamada = new Dictionary<string,object>();
 
+            dicDatosLlamada = Llamada.tomarDatosLlamada(llamadaAct, listCategoriaLlamada1);
+            //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
+            foreach (KeyValuePair<string, object> subopcSel in SubOpcionLlamada.getDatosSubOpc(subopcion1))
+            {
+                dicDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
+            }
+
+            return dicDatosLlamada;
         }
 
         public void tomarRstaValidacion()

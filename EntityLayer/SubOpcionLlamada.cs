@@ -30,7 +30,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             Dictionary<String, object> dictionary = new Dictionary<string, object>();
             dictionary.Add("Nombre_opc", subOpcionLlamadaSeleccionada.Nombre);
-            dictionary.Add("Nombre_opc", subOpcionLlamadaSeleccionada.NroOrden);
+            dictionary.Add("Orden_opc", subOpcionLlamadaSeleccionada.NroOrden);
             var count = 0;
 
             foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
