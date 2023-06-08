@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PPAI_IVR_Grupo8.EntityLayer; //ADD
+using PPAI_IVR_Grupo8.CapaDePresentacion;//ADD
 //using System.DateTime;
 
 namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
@@ -384,7 +385,8 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         private void validarRespuesta()
         {
-            //luego de la validacion se debe instanciar al objeto actual llamada (metodo obtenerRstaValidacion)
+            Dictionary<Validacion, OpcionValidacion> dic = new Dictionary<Validacion, OpcionValidacion>();
+            SubOpcionLlamada.ObtenerRstasValidacion(dic);
         }
 
         public void tomarDescripcionAccion()

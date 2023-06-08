@@ -16,9 +16,10 @@ using PPAI_IVR_Grupo8.CapaLogicaDeNegocio;
 using System.Xml.Linq;
 using System.Windows.Controls;
 using PPAI_IVR_Grupo8.EntityLayer;
+using System.Diagnostics.Eventing.Reader;
 //using Windows.UI.Xaml.Controls;
 
-namespace PPAI_IVR_Grupo8
+namespace PPAI_IVR_Grupo8.CapaDePresentacion
 {
     public partial class PantallaRespuestaOperador : Form
     {
@@ -31,6 +32,7 @@ namespace PPAI_IVR_Grupo8
             cambiarFormatoDataGrid();
             // generarNroAleatorio();
             GestorRO = new GestorRespuestaOperador();
+            dgValidacion.Rows.Clear();
 
         }
 
@@ -102,30 +104,69 @@ namespace PPAI_IVR_Grupo8
                 {
                     LlenarGrilla((Validacion)datos.Value);
                 }
+              else if (datos.Key == "Validacion3")
+                {
+                    LlenarGrilla((Validacion)datos.Value);
+                }
             }
 
         }
         private void LlenarGrilla(Validacion valid)
         {
-            //var count = 1;
-            dgValidacion.Rows.Clear();
+            var count = 1;
+            //dgValidacion.Rows.Clear();
             //foreach (Validacion val in valid)
             //{
-                //DataGridViewComboBoxColumn cell = new DataGridViewComboBoxColumn();
+                //DataGridViewComboBoxColumn cell = (row.Cells[2] as DataGridViewComboBoxCell);
                 //count += 1;
-                dgValidacion.Rows.Add(new object[]
+            DataTable dt = new DataTable();
+            dt.Columns.Add("NameVal", typeof(String));
+            dt.Columns.Add("NomSubopc", typeof(String));
+            foreach (OpcionValidacion val in valid.OpcValidaciones) 
+            { 
+                dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString() });
+            }
+            dgValidacion.Rows.Add(new object[]
                 {
                     valid.Nombre.ToString()
                     //LlenarComboColumn(respuestaCmbBox, val.OpcValidaciones, "Descripción")
                 });
-                LlenarComboColumn(respuestaCmbBox,valid.OpcValidaciones, "Descripcion");
-                //dgValidacion.Rows[count].Cells[1].
-                //dgValidacion.Rows[filas].Cells["fila1"].Value = valor;
+                //LlenarComboColumn(respuestaCmbBox,valid.OpcValidaciones, "Descripcion");
+            //dgValidacion.Rows[count].Cells[1].
+            //dgValidacion.Rows[filas].Cells["fila1"].Value = valor;
             //}
-            dgValidacion.ClearSelection();
+            //dgValidacion.ClearSelection();
+            foreach (DataGridViewRow row in dgValidacion.Rows)
+            {
+                DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];//
+                foreach (DataRow row1 in dt.Rows)
+                {
+                    string nomval = row1[0].ToString();
+
+                    if (row.Cells[0].Value is null){
+                        break;
+                    }
+                    else
+                    {
+                    if (row.Cells[0].Value.ToString() == nomval)
+                    {
+                            cboCell.Items.Add(row1[1]);
+                            cboCell.Value = row1[1];
+                    }
+                    }
+                }
+
+
+            }
         }
 
-        private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
+        private void dgvDetOC_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //DataGridViewComboBoxEditingControl dgvCombo = e.Control as DataGridViewComboBoxEditingControl;
+            MessageBox.Show("Selecciona");
+        }
+
+            private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
         {
             cbo.DisplayMember = display;
             cbo.DataSource = source;

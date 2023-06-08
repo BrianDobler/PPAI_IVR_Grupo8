@@ -1,4 +1,4 @@
-﻿namespace PPAI_IVR_Grupo8
+﻿namespace PPAI_IVR_Grupo8.CapaDePresentacion
 {
     partial class PantallaRespuestaOperador
     {
@@ -49,6 +49,10 @@
             this.txtbDescripcion = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panelContenedorIzq = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblSubOpcion = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.bunifuIconButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblOpcion = new System.Windows.Forms.Label();
@@ -63,6 +67,7 @@
             this.btnColgarLlamada = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.lblHora = new System.Windows.Forms.Label();
             this.panelGradIzq = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.bunifuIconButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,11 +75,6 @@
             this.panelSuperior = new Bunifu.UI.WinForms.BunifuPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblRptaOperador = new Bunifu.UI.WinForms.BunifuLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.bunifuIconButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
-            this.lblSubOpcion = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
             this.Pregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.respuestaCmbBox = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Validación = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -358,6 +358,50 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(187, 208);
             this.bunifuGradientPanel1.TabIndex = 11;
             // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.White;
+            this.lblCategoria.Location = new System.Drawing.Point(102, 181);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(60, 18);
+            this.lblCategoria.TabIndex = 16;
+            this.lblCategoria.Text = "numCat";
+            // 
+            // lblSubOpcion
+            // 
+            this.lblSubOpcion.AutoSize = true;
+            this.lblSubOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubOpcion.ForeColor = System.Drawing.Color.White;
+            this.lblSubOpcion.Location = new System.Drawing.Point(111, 156);
+            this.lblSubOpcion.Name = "lblSubOpcion";
+            this.lblSubOpcion.Size = new System.Drawing.Size(75, 18);
+            this.lblSubOpcion.TabIndex = 15;
+            this.lblSubOpcion.Text = "numSubO";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(14, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 18);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Categoría: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(14, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 18);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Subopción: ";
+            // 
             // bunifuIconButton3
             // 
             this.bunifuIconButton3.AllowAnimations = true;
@@ -579,6 +623,37 @@
             this.panelGradIzq.Size = new System.Drawing.Size(187, 188);
             this.panelGradIzq.TabIndex = 0;
             // 
+            // bunifuIconButton1
+            // 
+            this.bunifuIconButton1.AllowAnimations = true;
+            this.bunifuIconButton1.AllowBorderColorChanges = true;
+            this.bunifuIconButton1.AllowMouseEffects = true;
+            this.bunifuIconButton1.AnimationSpeed = 200;
+            this.bunifuIconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BorderRadius = 1;
+            this.bunifuIconButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.bunifuIconButton1.BorderThickness = 1;
+            this.bunifuIconButton1.ColorContrastOnClick = 30;
+            this.bunifuIconButton1.ColorContrastOnHover = 30;
+            this.bunifuIconButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.bunifuIconButton1.CustomizableEdges = borderEdges3;
+            this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuIconButton1.Image = global::PPAI_IVR_Grupo8.Properties.Resources.usuario;
+            this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.bunifuIconButton1.Location = new System.Drawing.Point(64, 18);
+            this.bunifuIconButton1.Name = "bunifuIconButton1";
+            this.bunifuIconButton1.RoundBorders = true;
+            this.bunifuIconButton1.ShowBorders = true;
+            this.bunifuIconButton1.Size = new System.Drawing.Size(59, 59);
+            this.bunifuIconButton1.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.bunifuIconButton1.TabIndex = 15;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -672,81 +747,6 @@
             this.lblRptaOperador.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblRptaOperador.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(14, 155);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 18);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Subopción: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(14, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 18);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Categoría: ";
-            // 
-            // bunifuIconButton1
-            // 
-            this.bunifuIconButton1.AllowAnimations = true;
-            this.bunifuIconButton1.AllowBorderColorChanges = true;
-            this.bunifuIconButton1.AllowMouseEffects = true;
-            this.bunifuIconButton1.AnimationSpeed = 200;
-            this.bunifuIconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuIconButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuIconButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuIconButton1.BorderRadius = 1;
-            this.bunifuIconButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
-            this.bunifuIconButton1.BorderThickness = 1;
-            this.bunifuIconButton1.ColorContrastOnClick = 30;
-            this.bunifuIconButton1.ColorContrastOnHover = 30;
-            this.bunifuIconButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuIconButton1.CustomizableEdges = borderEdges3;
-            this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuIconButton1.Image = global::PPAI_IVR_Grupo8.Properties.Resources.usuario;
-            this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bunifuIconButton1.Location = new System.Drawing.Point(64, 18);
-            this.bunifuIconButton1.Name = "bunifuIconButton1";
-            this.bunifuIconButton1.RoundBorders = true;
-            this.bunifuIconButton1.ShowBorders = true;
-            this.bunifuIconButton1.Size = new System.Drawing.Size(59, 59);
-            this.bunifuIconButton1.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
-            this.bunifuIconButton1.TabIndex = 15;
-            // 
-            // lblSubOpcion
-            // 
-            this.lblSubOpcion.AutoSize = true;
-            this.lblSubOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubOpcion.ForeColor = System.Drawing.Color.White;
-            this.lblSubOpcion.Location = new System.Drawing.Point(111, 156);
-            this.lblSubOpcion.Name = "lblSubOpcion";
-            this.lblSubOpcion.Size = new System.Drawing.Size(75, 18);
-            this.lblSubOpcion.TabIndex = 15;
-            this.lblSubOpcion.Text = "numSubO";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.White;
-            this.lblCategoria.Location = new System.Drawing.Point(102, 181);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(60, 18);
-            this.lblCategoria.TabIndex = 16;
-            this.lblCategoria.Text = "numCat";
-            // 
             // Pregunta
             // 
             this.Pregunta.FillWeight = 157.7847F;
@@ -755,11 +755,9 @@
             // 
             // respuestaCmbBox
             // 
+            this.respuestaCmbBox.AutoComplete = false;
             this.respuestaCmbBox.FillWeight = 60.9137F;
             this.respuestaCmbBox.HeaderText = "RESPUESTA";
-            this.respuestaCmbBox.Items.AddRange(new object[] {
-            "Verdadero",
-            "Falso"});
             this.respuestaCmbBox.Name = "respuestaCmbBox";
             this.respuestaCmbBox.ToolTipText = "Seleccionar..";
             // 
