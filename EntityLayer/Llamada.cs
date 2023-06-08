@@ -103,12 +103,12 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Dictionary<string,object> dic = new Dictionary<string,object>();
 
             var nomCliente = getNombreClienteLlamada(actualLlamada.Cliente);
-            var nomOpc = actualLlamada.Seleccionadaopc.Nombre;
+            var nomOpc = actualLlamada.Seleccionadaopc;
             var cte = OpcionLlamada.esCategoriaCte(actualLlamada.Seleccionadaopc, cat); 
 
             dic.Add("Nom_cliente", nomCliente);
-            dic.Add("Nom_Opcion", nomOpc);
-            dic.Add("categoria", cte);
+            dic.Add("Opcion", nomOpc);
+            dic.Add("Categoria", cte);
 
            return dic;
         }        

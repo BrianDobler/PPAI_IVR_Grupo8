@@ -29,15 +29,15 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public static Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
         {
             Dictionary<String, object> dictionary = new Dictionary<string, object>();
-            dictionary.Add("Nombre_opc", subOpcionLlamadaSeleccionada.Nombre);
-            dictionary.Add("Orden_opc", subOpcionLlamadaSeleccionada.NroOrden);
+            dictionary.Add("Nombre_sopc", subOpcionLlamadaSeleccionada.Nombre);
+            dictionary.Add("Orden_sopc", subOpcionLlamadaSeleccionada.NroOrden);
             var count = 0;
 
             foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
             {
-                count = count++;
+                count += 1;
 
-                dictionary.Add("Validacion"+count.ToString(), validacion);
+                dictionary.Add("Validacion"+ count.ToString(), validacion);
             }
             return dictionary;
         }

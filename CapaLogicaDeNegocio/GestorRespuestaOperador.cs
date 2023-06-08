@@ -96,14 +96,11 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada5;
         List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
 
-        private PantallaRespuestaOperador pantalla;
-
+        
         Llamada llamadaAct; //Esta es la llamada en curso
 
-        public GestorRespuestaOperador(PantallaRespuestaOperador pantalla)
+        public GestorRespuestaOperador()
         {
-            this.pantalla = pantalla;
-
             //Seteo de cada uno de los estados posibles
             estadoIniciada = new Estado("Iniciada");
             estadoEnCurso = new Estado("enCurso");
@@ -121,7 +118,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
 
             clienteAct = new Cliente(38985699, "matias comba", 3513482979);
-            this.pantalla.lblNombre.Text = clienteAct.NombreCompleto1;
+         
             //aca levanta la pregunta o es la que le ofrecemos al cliente 
 
             //corresponde a la validacion que edad tiene actualmente
@@ -225,7 +222,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             //SUBOPCIONES
 
             //para la primera opcion de la primera categoria 
-            subopcion1 = new SubOpcionLlamada(1, "Si cuenta con los datos de la tarjeta marque 1", null);
+            subopcion1 = new SubOpcionLlamada(1, "Si cuenta con los datos de la tarjeta marque 1", listValidaciones1);
             subopcion2 = new SubOpcionLlamada(2, "Si no cuenta con los datos de la tarjeta marque 2", null);
             subopcion3 = new SubOpcionLlamada(3, "Si desea comunicarse con un responsable de atencion al cliente marque 3", null);
             subopcion4 = new SubOpcionLlamada(4, "Si desea finalizar la llamada marque 4", null);
@@ -328,7 +325,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             //    );
 
         }
-        public void validarOpcSeleccionada()
+        public Dictionary<string,object> validarOpcSeleccionada()
         {
             var dicDatosLlamada = new Dictionary<string, object>();
 
@@ -337,7 +334,8 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             marcarllamadaEnCurso(eEnCurso);
 
             dicDatosLlamada = buscarDatosLlamada();
-            
+
+            return dicDatosLlamada;
         }
 
         private Estado obtenerLlamadaActual(List<Estado> lestado)
@@ -371,7 +369,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
             dicDatosLlamada = Llamada.tomarDatosLlamada(llamadaAct, listCategoriaLlamada1);
             //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
-            foreach (KeyValuePair<string, object> subopcSel in SubOpcionLlamada.getDatosSubOpc(subopcion1))
+            foreach (KeyValuePair<string, object> subopcSel in SubOpcionLlamada.getDatosSubOpc(llamadaAct.SeleccionadaSubopc))
             {
                 dicDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
             }
