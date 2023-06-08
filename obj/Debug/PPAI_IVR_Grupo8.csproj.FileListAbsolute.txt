@@ -142,3 +142,4 @@ C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\bin\Debug\System.Text.Encoding.C
 C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\bin\Debug\System.Threading.AccessControl.xml
 C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.Fody.CopyLocal.cache
 C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.CopyComplete
+C:\Users\ferme\Desktop\PPAI_IMPLEMENTACION\PPAI_IVR_Grupo8\bin\Debug\System.Collections.Immutable.xml

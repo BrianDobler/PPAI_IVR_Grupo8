@@ -15,7 +15,8 @@ using System.Diagnostics;
 using PPAI_IVR_Grupo8.CapaLogicaDeNegocio;
 using System.Xml.Linq;
 using System.Windows.Controls;
-using Windows.UI.Xaml.Controls;
+using PPAI_IVR_Grupo8.EntityLayer;
+//using Windows.UI.Xaml.Controls;
 
 namespace PPAI_IVR_Grupo8
 {
@@ -93,41 +94,42 @@ namespace PPAI_IVR_Grupo8
                 {
                     lblSubOpcion.Text = datos.Value.ToString();
                 }
+              else if (datos.Key == "Validacion1")
+                {
+                    LlenarGrilla((Validacion)datos.Value);
+                }
+              else if (datos.Key == "Validacion2")
+                {
+                    LlenarGrilla((Validacion)datos.Value);
+                }
             }
 
         }
-        private void LlenarGrilla(IList<Validacion> validacion)
+        private void LlenarGrilla(Validacion valid)
         {
-            respuestaCmbBox.DisplayMember = "Text";
-            respuestaCmbBox.ValueMember = "Value";
-
-            List<ComboBoxItem> list = new List<ComboboxItem>();
-
-            ComboboxItem item = new ComboboxItem();
-            item.Text = "choose a server...";
-            item.Value = "-1";
-            list.Add(item);
+            //var count = 1;
             dgValidacion.Rows.Clear();
-            foreach (Validacion val in validacion)
-            {
-                DataGridViewComboBoxColumn cell = new DataGridViewComboBoxColumn();
+            //foreach (Validacion val in valid)
+            //{
+                //DataGridViewComboBoxColumn cell = new DataGridViewComboBoxColumn();
+                //count += 1;
                 dgValidacion.Rows.Add(new object[]
                 {
-                    val.Nombre.ToString(),
+                    valid.Nombre.ToString()
                     //LlenarComboColumn(respuestaCmbBox, val.OpcValidaciones, "Descripción")
                 });
-                dgValidacion.Rows[0].Cells[0].Value = Nombre[contadorUsuarios + 1] = respuestaCmbBox.Text;
-                dgValidacion.Rows[filas].Cells["fila1"].Value = valor;
-            }
+                LlenarComboColumn(respuestaCmbBox,valid.OpcValidaciones, "Descripcion");
+                //dgValidacion.Rows[count].Cells[1].
+                //dgValidacion.Rows[filas].Cells["fila1"].Value = valor;
+            //}
             dgValidacion.ClearSelection();
         }
 
-        private DataGridViewComboBoxCell LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
+        private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
         {
-            DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
             cbo.DisplayMember = display;
-            cell.DataSource = source;
-            return cell;
+            cbo.DataSource = source;
+            cbo.DisplayMember = display;
         }
 
         private void panelSuperior_MouseMove(object sender, MouseEventArgs e)
