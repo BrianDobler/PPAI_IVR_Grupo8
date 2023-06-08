@@ -244,6 +244,20 @@
         RU5ErkJggg==
 </value>
   </data>
+  <data name="btnValidar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKIAAAAdCAYAAAApbre7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHASURBVHhe7dpdSwJBFAZgU9E2K8tW3dEIoii6ShBDCgpd
+        NYoiuhFKzfr/P+I0Z1bUzRMlMZMXr/CAHmbHm5f52knoDwGsALEI4JpYBHBNLAK4JhYBXBOLAK6JRWMt
+        lSTvMKBCt06lp0sKXltU+bgF+BXOC+fGv2vQxnGVkpm0mLMJsUjZqq87apMadnSnvYU/AViGGoWkBiHl
+        TvbFvGnxAqe2ENbMQ1KHAH8RDEMqPjQp6WVjudPiISz3b6gyxggIdpX715Ta9OQg8kiIEIIrvH6cy1/0
+        hdeEmI7BJTXq0FbtaBZE3h3zxkRqDGAT5y6dz0VB9O8vzK5Gaghgk9JLQf+xGQVRagDgEoIIK8EEkc92
+        eIiUGgBY9c5ni50oiHyeE2DHDP9A6UFw/aAUBZFtN07NdlpqDGCDGndpr1c3+ZsGkY9wSs9X4gMANgQv
+        rfmLEFEQGZ/n4DwRXFCDNmWDwjR72iyILFPcMe+bMU2DDTwd80j4JYQs9sPgaTrfPDOp5V2N1CHAcnrm
+        SiG/PPnmXuJCYYpTu9s+NzsbuXOAn6m3rrlczZespZxNiEUA18QigGtiEcA1sQjgmlgEcChBn+gekb5q
+        x8ciAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="Pregunta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

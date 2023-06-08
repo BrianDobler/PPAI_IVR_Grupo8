@@ -43,8 +43,12 @@
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
             this.panelContenedorMedio = new Bunifu.UI.WinForms.BunifuPanel();
             this.panelMedio = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnValidar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.cmbAccion = new System.Windows.Forms.ComboBox();
             this.dgValidacion = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.Pregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.respuestaCmbBox = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Validación = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfirmar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtbDescripcion = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panelContenedorIzq = new Bunifu.UI.WinForms.BunifuPanel();
@@ -75,9 +79,6 @@
             this.panelSuperior = new Bunifu.UI.WinForms.BunifuPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblRptaOperador = new Bunifu.UI.WinForms.BunifuLabel();
-            this.Pregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.respuestaCmbBox = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Validación = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContenedorMedio.SuspendLayout();
             this.panelMedio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgValidacion)).BeginInit();
@@ -118,6 +119,7 @@
             this.panelMedio.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.panelMedio.BorderRadius = 17;
             this.panelMedio.BorderThickness = 0;
+            this.panelMedio.Controls.Add(this.btnValidar);
             this.panelMedio.Controls.Add(this.cmbAccion);
             this.panelMedio.Controls.Add(this.dgValidacion);
             this.panelMedio.Controls.Add(this.btnConfirmar);
@@ -128,6 +130,32 @@
             this.panelMedio.ShowBorders = false;
             this.panelMedio.Size = new System.Drawing.Size(776, 583);
             this.panelMedio.TabIndex = 1;
+            // 
+            // btnValidar
+            // 
+            this.btnValidar.ActiveBorderThickness = 1;
+            this.btnValidar.ActiveCornerRadius = 20;
+            this.btnValidar.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(110)))), ((int)(((byte)(86)))));
+            this.btnValidar.ActiveForecolor = System.Drawing.Color.White;
+            this.btnValidar.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(110)))), ((int)(((byte)(86)))));
+            this.btnValidar.BackColor = System.Drawing.Color.Black;
+            this.btnValidar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnValidar.BackgroundImage")));
+            this.btnValidar.ButtonText = "VALIDAR";
+            this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnValidar.IdleBorderThickness = 1;
+            this.btnValidar.IdleCornerRadius = 20;
+            this.btnValidar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(97)))), ((int)(((byte)(71)))));
+            this.btnValidar.IdleForecolor = System.Drawing.Color.White;
+            this.btnValidar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(97)))), ((int)(((byte)(71)))));
+            this.btnValidar.Location = new System.Drawing.Point(557, 336);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(162, 29);
+            this.btnValidar.TabIndex = 7;
+            this.btnValidar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // cmbAccion
             // 
@@ -211,6 +239,26 @@
             this.dgValidacion.Size = new System.Drawing.Size(744, 312);
             this.dgValidacion.TabIndex = 6;
             this.dgValidacion.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // Pregunta
+            // 
+            this.Pregunta.FillWeight = 157.7847F;
+            this.Pregunta.HeaderText = "PREGUNTAS";
+            this.Pregunta.Name = "Pregunta";
+            // 
+            // respuestaCmbBox
+            // 
+            this.respuestaCmbBox.AutoComplete = false;
+            this.respuestaCmbBox.FillWeight = 60.9137F;
+            this.respuestaCmbBox.HeaderText = "RESPUESTA";
+            this.respuestaCmbBox.Name = "respuestaCmbBox";
+            this.respuestaCmbBox.ToolTipText = "Seleccionar..";
+            // 
+            // Validación
+            // 
+            this.Validación.FillWeight = 81.30157F;
+            this.Validación.HeaderText = "VALIDACIÓN";
+            this.Validación.Name = "Validación";
             // 
             // btnConfirmar
             // 
@@ -747,26 +795,6 @@
             this.lblRptaOperador.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblRptaOperador.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // Pregunta
-            // 
-            this.Pregunta.FillWeight = 157.7847F;
-            this.Pregunta.HeaderText = "PREGUNTAS";
-            this.Pregunta.Name = "Pregunta";
-            // 
-            // respuestaCmbBox
-            // 
-            this.respuestaCmbBox.AutoComplete = false;
-            this.respuestaCmbBox.FillWeight = 60.9137F;
-            this.respuestaCmbBox.HeaderText = "RESPUESTA";
-            this.respuestaCmbBox.Name = "respuestaCmbBox";
-            this.respuestaCmbBox.ToolTipText = "Seleccionar..";
-            // 
-            // Validación
-            // 
-            this.Validación.FillWeight = 81.30157F;
-            this.Validación.HeaderText = "VALIDACIÓN";
-            this.Validación.Name = "Validación";
-            // 
             // PantallaRespuestaOperador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -840,6 +868,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pregunta;
         private System.Windows.Forms.DataGridViewComboBoxColumn respuestaCmbBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Validación;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnValidar;
     }
 }
 

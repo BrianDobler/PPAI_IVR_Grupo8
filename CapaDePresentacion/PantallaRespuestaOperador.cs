@@ -26,6 +26,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
  
         Stopwatch sW = new Stopwatch();
         GestorRespuestaOperador GestorRO;
+        DataTable dt1 = new DataTable();
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
@@ -114,18 +115,17 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         private void LlenarGrilla(Validacion valid)
         {
             var count = 1;
-            //dgValidacion.Rows.Clear();
-            //foreach (Validacion val in valid)
-            //{
-                //DataGridViewComboBoxColumn cell = (row.Cells[2] as DataGridViewComboBoxCell);
-                //count += 1;
+
             DataTable dt = new DataTable();
-            dt.Columns.Add("NameVal", typeof(String));
+            dt.Columns.Add("NameVal", typeof(String)); 
             dt.Columns.Add("NomSubopc", typeof(String));
+            dt.Columns.Add("objVal", typeof(Validacion));
+
             foreach (OpcionValidacion val in valid.OpcValidaciones) 
             { 
-                dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString() });
+                dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString(),valid});
             }
+            dt1 = dt;
             dgValidacion.Rows.Add(new object[]
                 {
                     valid.Nombre.ToString()
@@ -160,13 +160,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             }
         }
 
-        private void dgvDetOC_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //DataGridViewComboBoxEditingControl dgvCombo = e.Control as DataGridViewComboBoxEditingControl;
-            MessageBox.Show("Selecciona");
-        }
-
-            private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
+        private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
         {
             cbo.DisplayMember = display;
             cbo.DataSource = source;
@@ -214,6 +208,15 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             }
         }
 
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgValidacion.Rows)
+            {
+                DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];
+                MessageBox.Show(cboCell.Value.ToString());
+            }
+
+        }
 
     }
 }

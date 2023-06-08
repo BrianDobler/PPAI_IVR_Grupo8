@@ -380,13 +380,13 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         public void tomarRstaValidacion()
         {
+            Dictionary<Validacion, OpcionValidacion> dic = new Dictionary<Validacion, OpcionValidacion>();
 
         }
 
-        private void validarRespuesta()
+        private bool validarRespuesta(Dictionary<Validacion, OpcionValidacion> dicc)
         {
-            Dictionary<Validacion, OpcionValidacion> dic = new Dictionary<Validacion, OpcionValidacion>();
-            SubOpcionLlamada.ObtenerRstasValidacion(dic);
+            return SubOpcionLlamada.ObtenerRstasValidacion(dicc);
         }
 
         public void tomarDescripcionAccion()
