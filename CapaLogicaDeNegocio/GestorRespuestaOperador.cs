@@ -97,11 +97,12 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada5;
         List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
 
-        
+       //PantallaRespuestaOperador Pantalla;
         Llamada llamadaAct; //Esta es la llamada en curso
 
-        public GestorRespuestaOperador()
+        public GestorRespuestaOperador ()//PantallaRespuestaOperador pantalla)
         {
+            //this.Pantalla = pantalla;
             //Seteo de cada uno de los estados posibles
             estadoIniciada = new Estado("Iniciada");
             estadoEnCurso = new Estado("enCurso");
@@ -326,25 +327,24 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             //    );
 
         }
-        public Dictionary<string,object> validarOpcSeleccionada()
+        public void validarOpcSeleccionada()
         {
             var dicDatosLlamada = new Dictionary<string, object>();
 
             Estado eEnCurso = new Estado();
-            eEnCurso = obtenerLlamadaActual(ListEstados);
+            eEnCurso = obtenerEstadoEnCurso(ListEstados); //Cambiar nombre en el diadrama de sec
             marcarllamadaEnCurso(eEnCurso);
 
             dicDatosLlamada = buscarDatosLlamada();
-
-            return dicDatosLlamada;
+            PantallaRespuestaOperador.GetInstance().mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);
         }
 
-        private Estado obtenerLlamadaActual(List<Estado> lestado)
+        private Estado obtenerEstadoEnCurso(List<Estado> lestado)
         {
             Estado state = new Estado();
             foreach (Estado estado in lestado)
             {
-                if (Estado.esEnCurso(estado))
+                if (estado.esEnCurso(estado))
                 {
                     state = estado;
                     break;
@@ -356,7 +356,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         private void marcarllamadaEnCurso(Estado estEnCurso)
         {
-            Llamada.setLlamadaEnCurso(llamadaAct, estEnCurso);
+            llamadaAct.setLlamadaEnCurso(llamadaAct, estEnCurso);
         }
 
         private DateTime obtenerFechaHoraActual()
@@ -378,15 +378,14 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             return dicDatosLlamada;
         }
 
-        public void tomarRstaValidacion()
+        public  bool tomarRstaValidacion(Dictionary<Validacion, string> respuesta)
         {
-            Dictionary<Validacion, OpcionValidacion> dic = new Dictionary<Validacion, OpcionValidacion>();
-
+            return validarRespuesta(respuesta);
         }
 
-        private bool validarRespuesta(Dictionary<Validacion, OpcionValidacion> dicc)
+        private bool validarRespuesta(Dictionary<Validacion, string> dicc)
         {
-            return SubOpcionLlamada.ObtenerRstasValidacion(dicc);
+            return llamadaAct.SeleccionadaSubopc.ObtenerRstasValidacion(dicc);
         }
 
         public void tomarDescripcionAccion()

@@ -17,6 +17,7 @@ using System.Xml.Linq;
 using System.Windows.Controls;
 using PPAI_IVR_Grupo8.EntityLayer;
 using System.Diagnostics.Eventing.Reader;
+using System.Management.Instrumentation;
 //using Windows.UI.Xaml.Controls;
 
 namespace PPAI_IVR_Grupo8.CapaDePresentacion
@@ -27,6 +28,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         Stopwatch sW = new Stopwatch();
         GestorRespuestaOperador GestorRO;
         DataTable dt1 = new DataTable();
+        private static PantallaRespuestaOperador instance = new PantallaRespuestaOperador(); //Implemento el Singleton
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
@@ -35,6 +37,12 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             GestorRO = new GestorRespuestaOperador();
             dgValidacion.Rows.Clear();
 
+        }
+        public static PantallaRespuestaOperador GetInstance()
+        {
+            if (instance == null)
+                instance = new PantallaRespuestaOperador();
+            return instance;
         }
 
         #region MetodosDeInterfaz
@@ -55,7 +63,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
 
 
     //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
-    [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -69,15 +77,18 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         {
             sW.Start();
             Dictionary<string,object> dicci = new Dictionary<string,object>();
+            GestorRO.validarOpcSeleccionada();
 
+        }
+        public void mostrarDatosLlamadaValidacion(Dictionary<string, object> dicci)
+        {
             OpcionLlamada opcLlamada = new OpcionLlamada();
             CategoriaLlamada catLlamada = new CategoriaLlamada();
             SubOpcionLlamada subOpcLlamada = new SubOpcionLlamada();
-            dicci = GestorRO.validarOpcSeleccionada();
 
             foreach (KeyValuePair<string, object> datos in dicci)
             {
-              if (datos.Key == "Nom_cliente")
+                if (datos.Key == "Nom_cliente")
                 {
                     lblNombreCliente.Text = datos.Value.ToString();
                 }
@@ -87,78 +98,67 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                     opcLlamada = (OpcionLlamada)datos.Value;
                     lblOpcion.Text = opcLlamada.NroOrden.ToString();
                 }
-               else if (datos.Key == "Categoria")
+                else if (datos.Key == "Categoria")
                 {
                     catLlamada = (CategoriaLlamada)datos.Value;
                     lblCategoria.Text = catLlamada.NroOrden.ToString();
                 }
-               
-              else if (datos.Key == "Orden_sopc")
+
+                else if (datos.Key == "Orden_sopc")
                 {
                     lblSubOpcion.Text = datos.Value.ToString();
                 }
-              else if (datos.Key == "Validacion1")
+                else if (datos.Key == "listValidacion")
                 {
-                    LlenarGrilla((Validacion)datos.Value);
+                    setValidaciones((List<Validacion>)datos.Value);
                 }
-              else if (datos.Key == "Validacion2")
-                {
-                    LlenarGrilla((Validacion)datos.Value);
-                }
-              else if (datos.Key == "Validacion3")
-                {
-                    LlenarGrilla((Validacion)datos.Value);
-                }
-            }
-
-        }
-        private void LlenarGrilla(Validacion valid)
-        {
-            var count = 1;
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("NameVal", typeof(String)); 
-            dt.Columns.Add("NomSubopc", typeof(String));
-            dt.Columns.Add("objVal", typeof(Validacion));
-
-            foreach (OpcionValidacion val in valid.OpcValidaciones) 
-            { 
-                dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString(),valid});
-            }
-            dt1 = dt;
-            dgValidacion.Rows.Add(new object[]
-                {
-                    valid.Nombre.ToString()
-                    //LlenarComboColumn(respuestaCmbBox, val.OpcValidaciones, "Descripción")
-                });
-                //LlenarComboColumn(respuestaCmbBox,valid.OpcValidaciones, "Descripcion");
-            //dgValidacion.Rows[count].Cells[1].
-            //dgValidacion.Rows[filas].Cells["fila1"].Value = valor;
-            //}
-            //dgValidacion.ClearSelection();
-            foreach (DataGridViewRow row in dgValidacion.Rows)
-            {
-                DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];//
-                foreach (DataRow row1 in dt.Rows)
-                {
-                    string nomval = row1[0].ToString();
-
-                    if (row.Cells[0].Value is null){
-                        break;
-                    }
-                    else
-                    {
-                    if (row.Cells[0].Value.ToString() == nomval)
-                    {
-                            cboCell.Items.Add(row1[1]);
-                            cboCell.Value = row1[1];
-                    }
-                    }
-                }
-
-
             }
         }
+        /* se saca porque al final no aplica un datagridviewComboBox */
+        //private void LlenarGrilla(Validacion valid)
+        //{
+        //    var count = 1;
+
+        //    DataTable dt = new DataTable();
+        //    dt.Columns.Add("NameVal", typeof(String)); 
+        //    dt.Columns.Add("NomSubopc", typeof(String));
+        //    dt.Columns.Add("objVal", typeof(Validacion));
+
+        //    foreach (OpcionValidacion val in valid.OpcValidaciones) 
+        //    { 
+        //        dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString(),valid});
+        //    }
+        //    dt1 = dt;
+        //    //dgValidacion.Rows.Add(new object[]
+        //    //    {
+        //    //     valid.Nombre.ToString()
+        //    //    });
+        //    dgValidacion.DataSource = valid;
+
+        //    foreach (DataGridViewRow row in dgValidacion.Rows)
+        //    {
+        //        DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];//
+        //        foreach (DataRow row1 in dt.Rows)
+        //        {
+        //            string nomval = row1[0].ToString();
+
+        //            if (row.Cells[0].Value is null){
+        //                break;
+        //            }
+        //            else
+        //            {
+        //            if (row.Cells[0].Value.ToString() == nomval)
+        //            {
+        //                    cboCell.Items.Add(row1[1]);
+        //                    cboCell.Value = row1[1];
+
+        //            }
+        //            }
+        //        }
+
+
+        //    }
+        //}
 
         private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
         {
@@ -210,13 +210,71 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
 
         private void btnValidar_Click(object sender, EventArgs e)
         {
+            Validacion val = dgValidacion.SelectedRows[0].DataBoundItem as Validacion;
+            bool valida;
+            Dictionary<Validacion,string> dic = new Dictionary<Validacion,string>();
+            //MessageBox.Show(val.Nombre.ToString());
             foreach (DataGridViewRow row in dgValidacion.Rows)
             {
-                DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];
-                MessageBox.Show(cboCell.Value.ToString());
+                //DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];
+                val = dgValidacion.Rows[row.Index].DataBoundItem as Validacion;
+                if (row.Cells[2].Value != null)
+                {
+                    val = dgValidacion.Rows[row.Index].DataBoundItem as Validacion;
+                    var pregunta = row.Cells[2].Value.ToString();
+                    dic.Add(val, pregunta);
+                    MessageBox.Show(row.Cells[2].Value.ToString());
+                    //GestorRO.tomarRstaValidacion()
+                }
+                else
+                {
+                    MessageBox.Show("Se deben cargar todas las preguntas antes de enviar a validar");
+                    break;
+                }
+                //MessageBox.Show(val.Nombre.ToString());
             }
+            valida = GestorRO.tomarRstaValidacion(dic);
+
+            if (valida)
+            {
+                MessageBox.Show("Se validó todo ok");
+            }
+            else { MessageBox.Show("Cargue respuestas validas"); }
 
         }
 
+        public void setValidaciones(List<Validacion> validacion)
+        {
+            //this.tarifas = tarifas;
+            List<Validacion> listValid = new List<Validacion>();
+            foreach (Validacion valid in validacion)
+            {
+                listValid.Add(new Validacion(valid.NroOrden,valid.Nombre,valid.OpcValidaciones));
+            }
+            dgValidacion.Columns.Clear();
+            dgValidacion.DataSource = listValid;
+            dgValidacion.Columns["NroOrden"].Visible = false;
+            //DataGridViewColumn column = new DataGridViewColumn();
+            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            column.CellTemplate = dgValidacion.Columns[1].CellTemplate;
+            column.AutoSizeMode = dgValidacion.Columns[1].AutoSizeMode;
+            dgValidacion.Columns.Add(column);
+            dgValidacion.Columns[2].HeaderCell.Value = "Pregunta";
+        }
+
+        private void dgValidacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 2)
+            {
+                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "valor");
+                if (!string.IsNullOrEmpty(valor)) {
+                  dgValidacion.Rows[e.RowIndex].Cells[2].Value = valor;
+                }
+            }
+            else
+            {
+                dgValidacion.Columns[1].ReadOnly = true;
+            }
+        }
     }
 }

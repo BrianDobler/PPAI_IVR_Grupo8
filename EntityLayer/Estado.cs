@@ -21,7 +21,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Nombre = nombre;
         }
 
-        public static Boolean esFinalizada(Estado est)
+        public Boolean esFinalizada(Estado est)
         {
             if (est.nombre == "Finalizada")
             {
@@ -36,7 +36,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return false;
         }
 
-        public static Boolean esEnCurso (Estado est)
+        public Boolean esEnCurso (Estado est)
         {
             if (est.nombre == "enCurso")
             {

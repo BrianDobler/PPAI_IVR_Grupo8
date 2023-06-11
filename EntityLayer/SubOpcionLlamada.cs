@@ -31,24 +31,25 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Dictionary<String, object> dictionary = new Dictionary<string, object>();
             dictionary.Add("Nombre_sopc", subOpcionLlamadaSeleccionada.Nombre);
             dictionary.Add("Orden_sopc", subOpcionLlamadaSeleccionada.NroOrden);
-            var count = 0;
+            //var count = 0;
+            dictionary.Add("listValidacion", subOpcionLlamadaSeleccionada.LValidacion);
 
-            foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
-            {
-                count += 1;
+            //foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
+            //{
+            //    count += 1;
 
-                dictionary.Add("Validacion"+count.ToString(), validacion);
-            }
+            //    dictionary.Add("Validacion"+count.ToString(), validacion);
+            //}
             return dictionary;
         }
 
 
-        public static bool ObtenerRstasValidacion(Dictionary<Validacion, OpcionValidacion> param)
+        public bool ObtenerRstasValidacion(Dictionary<Validacion, string> param)
         {
             bool res = false;
-            foreach(KeyValuePair<Validacion, OpcionValidacion> validacion in param) {
-
-                res = Validacion.esRstaCorrecta(validacion.Key, validacion.Value);
+            foreach(KeyValuePair<Validacion, string> validacion in param) {
+                Validacion valid = validacion.Key;
+                res = valid.esRstaCorrecta(validacion.Key, validacion.Value);
             }
 
             return res;

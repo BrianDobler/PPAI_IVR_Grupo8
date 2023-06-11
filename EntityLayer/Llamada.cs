@@ -66,7 +66,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return actualLLamada;
         }
 
-        public static void setLlamadaEnCurso(Llamada actualLlamada, Estado enCurso)
+        public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso)
         {
             actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today,enCurso));
 
@@ -119,13 +119,13 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         }
 
 
-        public static bool ObtenerRstasValidacion(Dictionary<Validacion,OpcionValidacion> param)
-        {
-            bool res = false;
-            res = SubOpcionLlamada.ObtenerRstasValidacion(param);
+        //public static bool ObtenerRstasValidacion(Dictionary<Validacion,string> param, SubOpcionLlamada subOpcSeleccionada)
+        //{
+        //    bool res = false;
+        //    res = subOpcSeleccionada.ObtenerRstasValidacion(param);
 
-            return res;
-        }
+        //    return res;
+        //}
         //{
 
         //}

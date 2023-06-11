@@ -46,9 +46,6 @@
             this.btnValidar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.cmbAccion = new System.Windows.Forms.ComboBox();
             this.dgValidacion = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Pregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.respuestaCmbBox = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Validación = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnConfirmar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtbDescripcion = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panelContenedorIzq = new Bunifu.UI.WinForms.BunifuPanel();
@@ -196,10 +193,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgValidacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgValidacion.ColumnHeadersHeight = 40;
-            this.dgValidacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Pregunta,
-            this.respuestaCmbBox,
-            this.Validación});
             this.dgValidacion.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dgValidacion.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dgValidacion.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -239,26 +232,7 @@
             this.dgValidacion.Size = new System.Drawing.Size(744, 312);
             this.dgValidacion.TabIndex = 6;
             this.dgValidacion.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
-            // Pregunta
-            // 
-            this.Pregunta.FillWeight = 157.7847F;
-            this.Pregunta.HeaderText = "PREGUNTAS";
-            this.Pregunta.Name = "Pregunta";
-            // 
-            // respuestaCmbBox
-            // 
-            this.respuestaCmbBox.AutoComplete = false;
-            this.respuestaCmbBox.FillWeight = 60.9137F;
-            this.respuestaCmbBox.HeaderText = "RESPUESTA";
-            this.respuestaCmbBox.Name = "respuestaCmbBox";
-            this.respuestaCmbBox.ToolTipText = "Seleccionar..";
-            // 
-            // Validación
-            // 
-            this.Validación.FillWeight = 81.30157F;
-            this.Validación.HeaderText = "VALIDACIÓN";
-            this.Validación.Name = "Validación";
+            this.dgValidacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgValidacion_CellClick);
             // 
             // btnConfirmar
             // 
@@ -865,9 +839,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton bunifuIconButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pregunta;
-        private System.Windows.Forms.DataGridViewComboBoxColumn respuestaCmbBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Validación;
         private Bunifu.Framework.UI.BunifuThinButton2 btnValidar;
     }
 }

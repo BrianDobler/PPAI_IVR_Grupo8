@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace PPAI_IVR_Grupo8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PantallaRespuestaOperador());
+            Application.Run(PantallaRespuestaOperador.GetInstance());
         }
     }
 }
