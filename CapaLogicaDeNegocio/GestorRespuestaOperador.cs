@@ -355,16 +355,9 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         private Estado obtenerEstadoEnCurso(List<Estado> lestado)
         {
-            Estado state = new Estado();
-            foreach (Estado estado in lestado)
-            {
-                if (estado.esEnCurso(estado))
-                {
-                    state = estado;
-                    break;
-                }
-            }
-            return state;// deberiamos llamara al metodo esEnCurso
+            Estado estadoEnCurso = new Estado();
+            estadoEnCurso = estadoEnCurso.esEnCurso(lestado);
+            return estadoEnCurso;// deberiamos llamara al metodo esEnCurso
             // deberiamos llamara al metodo esDeTucliente
         }
 
@@ -384,7 +377,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
             dicDatosLlamada = Llamada.tomarDatosLlamada(llamadaAct, listCategoriaLlamada1);
             //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
-            foreach (KeyValuePair<string, object> subopcSel in SubOpcionLlamada.getDatosSubOpc(llamadaAct.SeleccionadaSubopc))
+            foreach (KeyValuePair<string, object> subopcSel in llamadaAct.SeleccionadaSubopc.getDatosSubOpc(llamadaAct.SeleccionadaSubopc))
             {
                 dicDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
             }
@@ -429,14 +422,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         private Estado buscarEstadoFinalizado(List<Estado> lestado)
         {
             Estado finalizado = new Estado();
-            foreach (Estado estado in lestado)
-            {
-                if (estado.esFinalizada(estado))
-                {
-                    finalizado = estado;
-                    break;
-                }
-            }
+            finalizado = finalizado.esFinalizada(lestado);
             return finalizado;
         }
 

@@ -21,14 +21,24 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Nombre = nombre;
         }
 
-        public Boolean esFinalizada(Estado est)
+        public Estado esFinalizada(List<Estado> lestado)
         {
-            if (est.nombre == "Finalizada")
+            Estado finalizado = new Estado();
+            foreach (Estado estado in lestado)
             {
-                return true;
-
+                if (estado.Equals("Finalizada"))
+                {
+                    finalizado = estado;
+                    break;
+                }
             }
-            return false;
+            return finalizado;
+            //if (est.nombre == "Finalizada")
+            //{
+            //    return true;
+
+            //}
+            //return false;
         }
 
         public static Boolean esIniciada()
@@ -36,14 +46,24 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return false;
         }
 
-        public Boolean esEnCurso (Estado est)
+        public Estado esEnCurso (List<Estado> lestado)
         {
-            if (est.nombre == "enCurso")
+            Estado state = new Estado();
+            foreach (Estado estado in lestado)
             {
-                return true;
-
+                if (estado.Equals("EnCurso"))
+                {
+                    state = estado;
+                    break;
+                }
             }
-            return false;
+            return state;
+        //    if (est.nombre == "enCurso")
+        //    {
+        //        return true;
+
+        //    }
+        //    return false;
         }
 
     }

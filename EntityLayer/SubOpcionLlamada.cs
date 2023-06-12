@@ -26,7 +26,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.lValidacion = lValidacion;
         }
 
-        public static Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
+        public Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
         {
             Dictionary<String, object> dictionary = new Dictionary<string, object>();
             dictionary.Add("Nombre_sopc", subOpcionLlamadaSeleccionada.Nombre);
