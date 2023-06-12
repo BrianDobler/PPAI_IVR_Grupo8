@@ -225,6 +225,7 @@
             this.dgValidacion.TabIndex = 6;
             this.dgValidacion.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgValidacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgValidacion_CellClick);
+            this.dgValidacion.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgValidacion_CellValidating);
             // 
             // btnConfirmar
             // 

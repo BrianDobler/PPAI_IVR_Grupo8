@@ -278,5 +278,21 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             cmbAccion.DisplayMember = "Descripcion";
             cmbAccion.SelectedIndex = 0;
         }
+
+        private void dgValidacion_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "valor");
+                if (!string.IsNullOrEmpty(valor))
+                {
+                    dgValidacion.Rows[e.RowIndex].Cells[2].Value = valor;
+                }
+            }
+            else
+            {
+                dgValidacion.Columns[1].ReadOnly = true;
+            }
+        }
     }
 }
