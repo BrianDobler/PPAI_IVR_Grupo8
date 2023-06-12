@@ -18,6 +18,8 @@ using System.Windows.Controls;
 using PPAI_IVR_Grupo8.EntityLayer;
 using System.Diagnostics.Eventing.Reader;
 using System.Management.Instrumentation;
+using System.Drawing.Text;
+using Newtonsoft.Json.Linq;
 //using Windows.UI.Xaml.Controls;
 
 namespace PPAI_IVR_Grupo8.CapaDePresentacion
@@ -160,13 +162,6 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         //    }
         //}
 
-        private void LlenarComboColumn(DataGridViewComboBoxColumn cbo, object source, string display)
-        {
-            cbo.DisplayMember = display;
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-        }
-
         private void panelSuperior_MouseMove(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -275,6 +270,13 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             {
                 dgValidacion.Columns[1].ReadOnly = true;
             }
+        }
+        public void mostrarAcciones(IList<Accion> acciones)
+        {
+            //cmbAccion.ValueMember = "Descripcion";
+            cmbAccion.DataSource = acciones;
+            cmbAccion.DisplayMember = "Descripcion";
+            cmbAccion.SelectedIndex = 0;
         }
     }
 }

@@ -96,6 +96,10 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada4;
         CategoriaLlamada categoriaLlamada5;
         List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
+        Accion accion1;
+        Accion accion2;
+        Accion accion3;
+        List<Accion> accionList = new List<Accion>();
 
        //PantallaRespuestaOperador Pantalla;
         Llamada llamadaAct; //Esta es la llamada en curso
@@ -103,6 +107,16 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         public GestorRespuestaOperador ()//PantallaRespuestaOperador pantalla)
         {
             //this.Pantalla = pantalla;
+
+            //Carga de las acciones
+            accion1 = new Accion("Comunicar Saldo");
+            accion2 = new Accion("Dar de baja la tarjeta");
+            accion3 = new Accion("Denunciar un Robo o extravio");
+
+            accionList.Add(accion1);
+            accionList.Add(accion2);
+            accionList.Add(accion3);
+
             //Seteo de cada uno de los estados posibles
             estadoIniciada = new Estado("Iniciada");
             estadoEnCurso = new Estado("enCurso");
@@ -310,8 +324,8 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
                 clienteAct,
                 listCambioEstado,
                 opcionLlamada1,
-                subopcion1
-                );
+                subopcion1,
+                null);
 
 
 
@@ -380,6 +394,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         public  bool tomarRstaValidacion(Dictionary<Validacion, string> respuesta)
         {
+            PantallaRespuestaOperador.GetInstance().mostrarAcciones(accionList); //Esto lo tiene que mostrar si es qeu valido todo ok
             return validarRespuesta(respuesta);
         }
 
@@ -393,15 +408,45 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         }
 
-        public void tomarConfirmacion()
+        public void tomarConfirmacion(Accion accion)
         {
+            llamarCURegistrarAccionRequerida(accion);
+        }
+
+        public void llamarCURegistrarAccionRequerida(Accion accion) //VER PORQUE NO TIENE MISMO NOMBRE QUE EN DIAGRAMA
+        {
+            llamadaAct.AccionRequerida = accion;// se instancia al caso de uso 28 //COMPLETAR
+        }
+
+
+        public void tomarDescripcionOperador(string descripcion)
+        {
+            Estado finalizado = buscarEstadoFinalizado(ListEstados);
+            registrarFinalizacionLlamada(finalizado, descripcion);
 
         }
 
-        public void llamarCURegistrarAccionRequerida()
+        private Estado buscarEstadoFinalizado(List<Estado> lestado)
         {
-            // se instancia al caso de uso 28
+            Estado finalizado = new Estado();
+            foreach (Estado estado in lestado)
+            {
+                if (estado.esFinalizada(estado))
+                {
+                    finalizado = estado;
+                    break;
+                }
+            }
+            return finalizado;
+        }
+
+        private void registrarFinalizacionLlamada(Estado finalizado, String descripcionOperador)
+        {
+            DateTime fechaActual = obtenerFechaHoraActual();
+            llamadaAct.finalizar(llamadaAct, finalizado);
+            llamadaAct.calcularDuracion(llamadaAct,fechaActual);
+            llamadaAct.DescripcionOperador = descripcionOperador;
+    
         }
     }
-
 }

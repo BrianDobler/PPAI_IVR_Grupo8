@@ -157,22 +157,14 @@
             // cmbAccion
             // 
             this.cmbAccion.AccessibleName = "";
-            this.cmbAccion.AutoCompleteCustomSource.AddRange(new string[] {
-            "Comunicar Saldo",
-            "Dar de baja Tarjeta",
-            "Denunciar Robo"});
+            this.cmbAccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAccion.FormattingEnabled = true;
-            this.cmbAccion.Items.AddRange(new object[] {
-            "Comunicar Saldo",
-            "Dar de baja Tarjeta",
-            "Denunciar Robo"});
             this.cmbAccion.Location = new System.Drawing.Point(18, 533);
             this.cmbAccion.Name = "cmbAccion";
             this.cmbAccion.Size = new System.Drawing.Size(308, 23);
             this.cmbAccion.Sorted = true;
             this.cmbAccion.TabIndex = 0;
             this.cmbAccion.Tag = "";
-            this.cmbAccion.Text = "Seleccionar..";
             // 
             // dgValidacion
             // 

@@ -17,6 +17,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         private List<CambioEstado> lcambioestado;
         private OpcionLlamada seleccionadaopc;
         private SubOpcionLlamada seleccionadaSubopc;
+        private Accion accionRequerida;
 
 
   
@@ -29,7 +30,9 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public List<CambioEstado> Lcambioestado { get => lcambioestado; set => lcambioestado = value; }
         public OpcionLlamada Seleccionadaopc { get => seleccionadaopc; set => seleccionadaopc = value; }
         public SubOpcionLlamada SeleccionadaSubopc { get => seleccionadaSubopc; set => seleccionadaSubopc = value; }
-      public Llamada()
+        public Accion AccionRequerida { get => accionRequerida; set => accionRequerida = value; }
+
+        public Llamada()
         {
         }
         public Llamada(string descripcionOperador, 
@@ -39,7 +42,8 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                       Cliente cliente, 
                       List<CambioEstado> lcambioestado, 
                       OpcionLlamada seleccionadaopc, 
-                      SubOpcionLlamada seleccionadaSubopc)
+                      SubOpcionLlamada seleccionadaSubopc,
+                      Accion accionRequerida)
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
@@ -49,6 +53,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.lcambioestado = lcambioestado;
             this.seleccionadaopc = seleccionadaopc;
             this.seleccionadaSubopc = seleccionadaSubopc;
+            this.AccionRequerida = accionRequerida;
         }
 
 
@@ -72,21 +77,21 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         }
 
-        public static void finalizar(Llamada actualLlamada, Estado finalizado)
+        public void finalizar(Llamada actualLlamada, Estado finalizado)
         {
             actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today, finalizado));
 
         }
 
 
-        public static void calcularDuracion(Llamada actualLlamada, DateTime fechafinalizacion) 
+        public void calcularDuracion(Llamada actualLlamada, DateTime fechafinalizacion) 
         {
             var fechamin = obtenerFechaHoraMinima(actualLlamada.Lcambioestado);
             var duracion = fechafinalizacion.Subtract(fechamin);
             actualLlamada.Duracion = Convert.ToInt16(duracion);
         }
 
-        public static DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
+        public DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
         {
 
             DateTime cEstadofechaMin = lCestado

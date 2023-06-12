@@ -244,6 +244,7 @@
       <DependentUpon>PantallaRespuestaOperador.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaLogicaDeNegocio\GestorRespuestaOperador.cs" />
+    <Compile Include="EntityLayer\Accion.cs" />
     <Compile Include="EntityLayer\CambioEstado.cs" />
     <Compile Include="EntityLayer\CategoriaLlamada.cs" />
     <Compile Include="EntityLayer\Cliente.cs" />
