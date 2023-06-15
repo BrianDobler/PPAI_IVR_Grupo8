@@ -34,7 +34,6 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
-            cambiarFormatoDataGrid();
             // generarNroAleatorio();
             GestorRO = new GestorRespuestaOperador();
             dgValidacion.Rows.Clear();
@@ -49,22 +48,10 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
 
         #region MetodosDeInterfaz
 
-        private void cambiarFormatoDataGrid()
-        {
-            txtbDescripcion.Height = 100;
-            txtbDescripcion.Enabled = true;
-            cmbAccion.DropDownStyle = ComboBoxStyle.DropDownList;
-            dgValidacion.DefaultCellStyle.BackColor = Color.White;
-            dgValidacion.DefaultCellStyle.ForeColor = Color.Black;
-            dgValidacion.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 110, 86);
-            dgValidacion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgValidacion.DefaultCellStyle.SelectionBackColor = Color.White;
-            dgValidacion.DefaultCellStyle.SelectionForeColor = Color.Black;
-
-        }
 
 
-    //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
+
+        //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -283,7 +270,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         {
             if (e.ColumnIndex == 1)
             {
-                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "valor");
+                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "VALOR");
                 if (!string.IsNullOrEmpty(valor))
                 {
                     dgValidacion.Rows[e.RowIndex].Cells[2].Value = valor;
@@ -293,6 +280,15 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             {
                 dgValidacion.Columns[1].ReadOnly = true;
             }
+        }
+
+        private void txtDescripcion_Click(object sender, EventArgs e)
+        {
+            if (txtDescripcion.Enabled == false)
+            {
+                MessageBox.Show("Esta deshabilitado, por favor valide primero las preguntas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }

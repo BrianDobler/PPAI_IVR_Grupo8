@@ -84,7 +84,6 @@ C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Gru
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\bin\Debug\System.Threading.AccessControl.xml
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.AssemblyReference.cache
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.SuggestedBindingRedirects.cache
-C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.PantallaRespuestaOperador.resources
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.Properties.Resources.resources
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.GenerateResource.cache
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.exe.licenses
@@ -143,3 +142,5 @@ C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj
 C:\Users\brian\OneDrive\Desktop\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.csproj.CopyComplete
 C:\Users\ferme\Desktop\PPAI_IMPLEMENTACION\PPAI_IVR_Grupo8\bin\Debug\System.Collections.Immutable.xml
 C:\Users\ferme\Desktop\PPAI_IMPLEMENTACION\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaRespuestaOperador.resources
+C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaRespuestaOperador.resources
+C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\bin\Debug\System.Collections.Immutable.xml
