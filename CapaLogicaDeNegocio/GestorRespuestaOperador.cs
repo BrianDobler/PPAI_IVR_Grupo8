@@ -106,6 +106,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         public GestorRespuestaOperador ()//PantallaRespuestaOperador pantalla)
         {
+            #region objetos hardcode
             //this.Pantalla = pantalla;
 
             //Carga de las acciones
@@ -134,17 +135,25 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
 
             clienteAct = new Cliente(38985699, "matias comba", 3513482979);
-         
+
             //aca levanta la pregunta o es la que le ofrecemos al cliente 
+
+            //tiene extencion en la cuenta de la tarjeta 
+            opcionValidacion1 = new OpcionValidacion(true, "2");
+            opcionValidacion2 = new OpcionValidacion(false, "1");
+
+            //Se carga lista con opcValidacion7
+            listOpcionValidaciones1.Add(opcionValidacion1);
+            listOpcionValidaciones1.Add(opcionValidacion2);
 
             //corresponde a la validacion que edad tiene actualmente
             opcionValidacion3 = new OpcionValidacion(false, "10");
             opcionValidacion4 = new OpcionValidacion(false, "15");
             opcionValidacion5 = new OpcionValidacion(true, "25");
             //Se carga la lista con las opcvalidaciones1
-            listOpcionValidaciones1.Add(opcionValidacion3);
-            listOpcionValidaciones1.Add(opcionValidacion4);
-            listOpcionValidaciones1.Add(opcionValidacion5);
+            listOpcionValidaciones2.Add(opcionValidacion3);
+            listOpcionValidaciones2.Add(opcionValidacion4);
+            listOpcionValidaciones2.Add(opcionValidacion5);
 
 
             //estas opciones responde a la validacion de cuantas cuentas propias tiene en la cuenta 
@@ -191,13 +200,6 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             listOpcionValidaciones6.Add(opcionValidacion22);
             listOpcionValidaciones6.Add(opcionValidacion23);
 
-            //tiene extencion en la cuenta de la tarjeta 
-            opcionValidacion1 = new OpcionValidacion(true, "tiene actualmente 2 extenciones de la tarjeta");
-            opcionValidacion2 = new OpcionValidacion(false, "tiene actualmente 1 extenciones de la tarjeta");
-
-            //Se carga lista con opcValidacion7
-            listOpcionValidaciones7.Add(opcionValidacion1);
-            listOpcionValidaciones7.Add(opcionValidacion2);
 
             //hizo alguna transaccion esta semana 
             opcionValidacion12 = new OpcionValidacion(true, "NO");
@@ -211,29 +213,28 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
             //VALIDACIONES
             //con un listado 
-
-            validacion2 = new Validacion(2, "que edad tiene actualmente", listOpcionValidaciones1);
-            validacion3 = new Validacion(3, "cuantas cuentas propias tiene en la cuenta ", listOpcionValidaciones2);
-            validacion4 = new Validacion(4, "fecha de la ultima transaccion hecha", listOpcionValidaciones3);
-            validacion8 = new Validacion(8, "codigo postal de su ultimo domicilio registrado", listOpcionValidaciones4);
-            validacion9 = new Validacion(9, "mes en que pidio la tarjeta", listOpcionValidaciones5);
-            validacion10 = new Validacion(10, "tiene extencion en la cuenta de la tarjeta", listOpcionValidaciones6);
-            validacion1 = new Validacion(1, "tiene extencion en la cuenta de la tarjeta", listOpcionValidaciones7);
-            validacion5 = new Validacion(5, "hizo alguna transaccion esta semana ", listOpcionValidaciones8);
-            validacion6 = new Validacion(6, "la cuenta la abrio este año", listOpcionValidaciones9);
-            validacion7 = new Validacion(7, "la tarjeta es de caracter compartida", listOpcionValidaciones10);
+            validacion1 = new Validacion(1, "tiene extencion en la cuenta de la tarjeta", listOpcionValidaciones1);
+            validacion2 = new Validacion(2, "que edad tiene actualmente", listOpcionValidaciones2);
+            //validacion3 = new Validacion(3, "cuantas cuentas propias tiene en la cuenta ", listOpcionValidaciones2);
+            //validacion4 = new Validacion(4, "fecha de la ultima transaccion hecha", listOpcionValidaciones3);
+            //validacion8 = new Validacion(8, "codigo postal de su ultimo domicilio registrado", listOpcionValidaciones4);
+            //validacion9 = new Validacion(9, "mes en que pidio la tarjeta", listOpcionValidaciones5);
+            //validacion10 = new Validacion(10, "tiene extencion en la cuenta de la tarjeta", listOpcionValidaciones6);
+            //validacion5 = new Validacion(5, "hizo alguna transaccion esta semana ", listOpcionValidaciones8);
+            //validacion6 = new Validacion(6, "la cuenta la abrio este año", listOpcionValidaciones9);
+            //validacion7 = new Validacion(7, "la tarjeta es de caracter compartida", listOpcionValidaciones10);
 
             //Se cargan las lista de validacion
             listValidaciones1.Add(validacion1);
             listValidaciones1.Add(validacion2);
-            listValidaciones1.Add(validacion3);
-            listValidaciones1.Add(validacion4);
-            listValidaciones1.Add(validacion5);
-            listValidaciones1.Add(validacion6);
-            listValidaciones1.Add(validacion7);
-            listValidaciones1.Add(validacion8);
-            listValidaciones1.Add(validacion9);
-            listValidaciones1.Add(validacion10);
+            //listValidaciones1.Add(validacion3);
+            //listValidaciones1.Add(validacion4);
+            //listValidaciones1.Add(validacion5);
+            //listValidaciones1.Add(validacion6);
+            //listValidaciones1.Add(validacion7);
+            //listValidaciones1.Add(validacion8);
+            //listValidaciones1.Add(validacion9);
+            //listValidaciones1.Add(validacion10);
 
             //SUBOPCIONES
 
@@ -327,18 +328,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
                 subopcion1,
                 null);
 
-
-
-            //Llamada llamada2 = new Llamada(
-            //    null,
-            //    null,
-            //    0,
-            //    "se realizo los procedimientos correctamente ",
-            //    cliente,
-            //    null,
-            //    opcionLlamada9,
-            //    subopcion8
-            //    );
+            #endregion
 
         }
         public void validarOpcSeleccionada()

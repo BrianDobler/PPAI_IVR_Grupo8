@@ -109,7 +109,7 @@
             "Dar de baja Tarjeta",
             "Denunciar Robo"});
             this.cmbAccion.Enabled = false;
-            this.cmbAccion.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAccion.FormattingEnabled = true;
             this.cmbAccion.Items.AddRange(new object[] {
             "Comunicar Saldo",
@@ -117,7 +117,7 @@
             "Denunciar Robo"});
             this.cmbAccion.Location = new System.Drawing.Point(75, 165);
             this.cmbAccion.Name = "cmbAccion";
-            this.cmbAccion.Size = new System.Drawing.Size(308, 34);
+            this.cmbAccion.Size = new System.Drawing.Size(308, 26);
             this.cmbAccion.Sorted = true;
             this.cmbAccion.TabIndex = 8;
             this.cmbAccion.Tag = "";
@@ -176,7 +176,7 @@
             this.btnValidar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnValidar.BackgroundImage")));
             this.btnValidar.ButtonText = "Validar";
             this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Font = new System.Drawing.Font("Poppins Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValidar.ForeColor = System.Drawing.Color.White;
             this.btnValidar.IdleBorderThickness = 1;
             this.btnValidar.IdleCornerRadius = 20;
@@ -293,7 +293,7 @@
             this.txtDescripcion.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.DefaultText = "";
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(65)))), ((int)(((byte)(79)))));
@@ -364,7 +364,7 @@
             this.btnConfirmar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.BackgroundImage")));
             this.btnConfirmar.ButtonText = "Confirmar";
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.Font = new System.Drawing.Font("Poppins Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
             this.btnConfirmar.IdleBorderThickness = 1;
             this.btnConfirmar.IdleCornerRadius = 20;
@@ -425,11 +425,11 @@
             // 
             this.pnt1.AutoSize = true;
             this.pnt1.BackColor = System.Drawing.Color.Transparent;
-            this.pnt1.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnt1.ForeColor = System.Drawing.Color.White;
             this.pnt1.Location = new System.Drawing.Point(60, 41);
             this.pnt1.Name = "pnt1";
-            this.pnt1.Size = new System.Drawing.Size(23, 37);
+            this.pnt1.Size = new System.Drawing.Size(19, 25);
             this.pnt1.TabIndex = 19;
             this.pnt1.Text = ":";
             // 
@@ -437,22 +437,22 @@
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
-            this.lblHora.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
             this.lblHora.Location = new System.Drawing.Point(25, 43);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(0, 37);
+            this.lblHora.Size = new System.Drawing.Size(0, 25);
             this.lblHora.TabIndex = 18;
             // 
             // lblSeg
             // 
             this.lblSeg.AutoSize = true;
             this.lblSeg.BackColor = System.Drawing.Color.Transparent;
-            this.lblSeg.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeg.ForeColor = System.Drawing.Color.White;
             this.lblSeg.Location = new System.Drawing.Point(127, 43);
             this.lblSeg.Name = "lblSeg";
-            this.lblSeg.Size = new System.Drawing.Size(0, 37);
+            this.lblSeg.Size = new System.Drawing.Size(0, 25);
             this.lblSeg.TabIndex = 17;
             // 
             // btnColgarLlamada
@@ -491,11 +491,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(14, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(172, 26);
+            this.label14.Size = new System.Drawing.Size(143, 18);
             this.label14.TabIndex = 14;
             this.label14.Text = "Duración de llamada";
             // 
@@ -503,22 +503,22 @@
             // 
             this.lblMinut.AutoSize = true;
             this.lblMinut.BackColor = System.Drawing.Color.Transparent;
-            this.lblMinut.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinut.ForeColor = System.Drawing.Color.White;
             this.lblMinut.Location = new System.Drawing.Point(75, 43);
             this.lblMinut.Name = "lblMinut";
-            this.lblMinut.Size = new System.Drawing.Size(0, 37);
+            this.lblMinut.Size = new System.Drawing.Size(0, 25);
             this.lblMinut.TabIndex = 16;
             // 
             // pnt2
             // 
             this.pnt2.AutoSize = true;
             this.pnt2.BackColor = System.Drawing.Color.Transparent;
-            this.pnt2.Font = new System.Drawing.Font("Poppins Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnt2.ForeColor = System.Drawing.Color.White;
             this.pnt2.Location = new System.Drawing.Point(114, 41);
             this.pnt2.Name = "pnt2";
-            this.pnt2.Size = new System.Drawing.Size(23, 37);
+            this.pnt2.Size = new System.Drawing.Size(19, 25);
             this.pnt2.TabIndex = 16;
             this.pnt2.Text = ":";
             // 
@@ -553,11 +553,11 @@
             // 
             this.lblLinkInfoCliente.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(65)))), ((int)(((byte)(79)))));
             this.lblLinkInfoCliente.AutoSize = true;
-            this.lblLinkInfoCliente.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLinkInfoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLinkInfoCliente.LinkColor = System.Drawing.Color.White;
             this.lblLinkInfoCliente.Location = new System.Drawing.Point(20, 208);
             this.lblLinkInfoCliente.Name = "lblLinkInfoCliente";
-            this.lblLinkInfoCliente.Size = new System.Drawing.Size(149, 22);
+            this.lblLinkInfoCliente.Size = new System.Drawing.Size(134, 15);
             this.lblLinkInfoCliente.TabIndex = 17;
             this.lblLinkInfoCliente.TabStop = true;
             this.lblLinkInfoCliente.Text = "Ver información Cliente";
@@ -565,11 +565,11 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Poppins ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.White;
             this.lblCategoria.Location = new System.Drawing.Point(103, 156);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(93, 34);
+            this.lblCategoria.Size = new System.Drawing.Size(75, 24);
             this.lblCategoria.TabIndex = 16;
             this.lblCategoria.Text = "numCat";
             // 
@@ -607,77 +607,77 @@
             // lblSubOpcion
             // 
             this.lblSubOpcion.AutoSize = true;
-            this.lblSubOpcion.Font = new System.Drawing.Font("Poppins ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubOpcion.ForeColor = System.Drawing.Color.White;
             this.lblSubOpcion.Location = new System.Drawing.Point(109, 129);
             this.lblSubOpcion.Name = "lblSubOpcion";
-            this.lblSubOpcion.Size = new System.Drawing.Size(109, 34);
+            this.lblSubOpcion.Size = new System.Drawing.Size(97, 24);
             this.lblSubOpcion.TabIndex = 15;
             this.lblSubOpcion.Text = "numSubO";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 12F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(7, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 28);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Poppins Medium", 12F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(7, 158);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 28);
+            this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Categoría: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins Medium", 12F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(7, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 28);
+            this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Opción: ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Poppins Medium", 12F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(7, 131);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 28);
+            this.label10.Size = new System.Drawing.Size(93, 20);
             this.label10.TabIndex = 13;
             this.label10.Text = "Subopción: ";
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Font = new System.Drawing.Font("Poppins ExtraLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreCliente.ForeColor = System.Drawing.Color.White;
             this.lblNombreCliente.Location = new System.Drawing.Point(77, 79);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(102, 28);
+            this.lblNombreCliente.Size = new System.Drawing.Size(89, 20);
             this.lblNombreCliente.TabIndex = 3;
             this.lblNombreCliente.Text = "nomCliente";
             // 
             // lblOpcion
             // 
             this.lblOpcion.AutoSize = true;
-            this.lblOpcion.Font = new System.Drawing.Font("Poppins ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOpcion.ForeColor = System.Drawing.Color.White;
             this.lblOpcion.Location = new System.Drawing.Point(79, 101);
             this.lblOpcion.Name = "lblOpcion";
-            this.lblOpcion.Size = new System.Drawing.Size(129, 34);
+            this.lblOpcion.Size = new System.Drawing.Size(112, 24);
             this.lblOpcion.TabIndex = 12;
             this.lblOpcion.Text = "numeroOpc";
             // 
@@ -737,44 +737,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins ExtraLight", 14F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(84, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 34);
+            this.label4.Size = new System.Drawing.Size(30, 24);
             this.label4.TabIndex = 10;
             this.label4.Text = "29";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 28);
+            this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Equipo: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins ExtraLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 28);
+            this.label2.Size = new System.Drawing.Size(127, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Rodrigo Aliendro";
             // 
             // lblOP
             // 
             this.lblOP.AutoSize = true;
-            this.lblOP.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOP.ForeColor = System.Drawing.Color.White;
             this.lblOP.Location = new System.Drawing.Point(13, 75);
             this.lblOP.Name = "lblOP";
-            this.lblOP.Size = new System.Drawing.Size(98, 28);
+            this.lblOP.Size = new System.Drawing.Size(84, 20);
             this.lblOP.TabIndex = 5;
             this.lblOP.Text = "Operador: ";
             // 
@@ -832,11 +832,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(415, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 26);
+            this.label7.Size = new System.Drawing.Size(146, 18);
             this.label7.TabIndex = 11;
             this.label7.Text = "Respuesta Operador";
             // 
