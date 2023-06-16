@@ -18,7 +18,9 @@ namespace PPAI_IVR_Grupo8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new PantallaLlamadaEntrante());
             Application.Run(PantallaRespuestaOperador.GetInstance());
+           
         }
     }
 }

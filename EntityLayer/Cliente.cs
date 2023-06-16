@@ -25,8 +25,5 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.nroCelular = nroCelular;
         }
 
-        public Cliente()
-        {
-        }
     }
 }

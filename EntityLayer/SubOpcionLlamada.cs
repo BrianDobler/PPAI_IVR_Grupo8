@@ -34,15 +34,8 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             //var count = 0;
             dictionary.Add("listValidacion", subOpcionLlamadaSeleccionada.LValidacion);
 
-            //foreach (var validacion in subOpcionLlamadaSeleccionada.lValidacion)
-            //{
-            //    count += 1;
-
-            //    dictionary.Add("Validacion"+count.ToString(), validacion);
-            //}
             return dictionary;
         }
-
 
         public bool ObtenerRstasValidacion(Dictionary<Validacion, string> param)
         {

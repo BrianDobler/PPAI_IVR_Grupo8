@@ -33,12 +33,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                 }
             }
             return finalizado;
-            //if (est.nombre == "Finalizada")
-            //{
-            //    return true;
-
-            //}
-            //return false;
         }
 
         public static Boolean esIniciada()
@@ -58,12 +52,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                 }
             }
             return state;
-        //    if (est.nombre == "enCurso")
-        //    {
-        //        return true;
-
-        //    }
-        //    return false;
         }
 
     }

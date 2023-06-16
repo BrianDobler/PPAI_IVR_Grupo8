@@ -237,6 +237,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDePresentacion\PantallaLlamadaEntrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDePresentacion\PantallaLlamadaEntrante.Designer.cs">
+      <DependentUpon>PantallaLlamadaEntrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDePresentacion\PantallaLlamdaFinalizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDePresentacion\PantallaLlamdaFinalizada.Designer.cs">
+      <DependentUpon>PantallaLlamdaFinalizada.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaDePresentacion\PantallaRespuestaOperador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +268,12 @@
     <Compile Include="EntityLayer\Validacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaDePresentacion\PantallaLlamadaEntrante.resx">
+      <DependentUpon>PantallaLlamadaEntrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaDePresentacion\PantallaLlamdaFinalizada.resx">
+      <DependentUpon>PantallaLlamdaFinalizada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaDePresentacion\PantallaRespuestaOperador.resx">
       <DependentUpon>PantallaRespuestaOperador.cs</DependentUpon>
       <SubType>Designer</SubType>

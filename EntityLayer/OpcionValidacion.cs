@@ -13,15 +13,12 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public bool Correcta { get => correcta; set => correcta = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
-        public OpcionValidacion()
-        {
-        }
+
         public OpcionValidacion(bool correcta, string descripcion)
         {
             this.correcta = correcta;
             this.descripcion = descripcion;
         }
-
 
         public bool esCorrecta(OpcionValidacion val, string respuesta)
         {

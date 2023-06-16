@@ -144,3 +144,5 @@ C:\Users\ferme\Desktop\PPAI_IMPLEMENTACION\PPAI_IVR_Grupo8\bin\Debug\System.Coll
 C:\Users\ferme\Desktop\PPAI_IMPLEMENTACION\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaRespuestaOperador.resources
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaRespuestaOperador.resources
 C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\bin\Debug\System.Collections.Immutable.xml
+C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaLlamadaEntrante.resources
+C:\Users\brian\OneDrive\Documentos\UTN - FRC\3º Año\DSI\PPAI 2023\PPAI_IVR_Grupo8\obj\Debug\PPAI_IVR_Grupo8.CapaDePresentacion.PantallaLlamdaFinalizada.resources

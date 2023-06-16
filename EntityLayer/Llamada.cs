@@ -32,9 +32,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public SubOpcionLlamada SeleccionadaSubopc { get => seleccionadaSubopc; set => seleccionadaSubopc = value; }
         public Accion AccionRequerida { get => accionRequerida; set => accionRequerida = value; }
 
-        public Llamada()
-        {
-        }
         public Llamada(string descripcionOperador, 
                       string detalleAccionRequerida, 
                       int duracion, 
@@ -56,6 +53,9 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.AccionRequerida = accionRequerida;
         }
 
+        public Llamada()
+        {
+        }
 
         public static Llamada esDeTuCliente(List<Llamada> lLlamada, Cliente clt)
         {
@@ -93,11 +93,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 
         {
-
-            DateTime cEstadofechaMin = lCestado
-                              //.Select(x => x.FechaHoraInicio < fechaInicio).FirstOrDefault();
-                              .Min(x => x.FechaHoraInicio);
-            //var fechaMin = cEstadofechaMin.FechaHoraInicio;
+            DateTime cEstadofechaMin = lCestado.Min(x => x.FechaHoraInicio);
 
             return cEstadofechaMin;
         
@@ -122,17 +118,5 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
         }
-
-
-        //public static bool ObtenerRstasValidacion(Dictionary<Validacion,string> param, SubOpcionLlamada subOpcSeleccionada)
-        //{
-        //    bool res = false;
-        //    res = subOpcSeleccionada.ObtenerRstasValidacion(param);
-
-        //    return res;
-        //}
-        //{
-
-        //}
     }
 }

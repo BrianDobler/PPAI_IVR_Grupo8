@@ -34,7 +34,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
-            // generarNroAleatorio();
+            //generarNroAleatorio();
             GestorRO = new GestorRespuestaOperador();
             dgValidacion.Rows.Clear();
 
@@ -48,9 +48,6 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
 
         #region MetodosDeInterfaz
 
-
-
-
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -61,14 +58,51 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void panelSuperior_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void horaFecha_Tick(object sender, EventArgs e)
+        {
+            TimeSpan ts = new TimeSpan(0, 0, 0, 0, (int)sW.ElapsedMilliseconds);
+
+            lblHora.Text = ts.Hours.ToString().PadLeft(2, '0');
+            lblMinut.Text = ts.Minutes.ToString().PadLeft(2, '0');
+            lblSeg.Text = ts.Seconds.ToString().PadLeft(2, '0');
+
+        }
+
+        #endregion
+
+        private void generarNroAleatorio() 
+        {
+            Random random = new Random();
+            // Genera un número aleatorio entre 0 y 1
+            int numeroAleatorio = random.Next(2);
+            // Asigna el valor 1 o 10 según el número aleatorio generado
+          
+            //int segundos = Convert.ToInt32(lblSeg.Text);
+
+            if (numeroAleatorio == 0)
+            {
+                MessageBox.Show("El cliente finalizo la llamada..", "Finalizando Llamada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new PantallaLlamdaFinalizada().ShowDialog();
+                this.Close();
+            }
+
+        }
+
 
         private void PantallaRespuestaOperador_Load(object sender, EventArgs e)
         {
             sW.Start();
-            Dictionary<string,object> dicci = new Dictionary<string,object>();
+            Dictionary<string, object> dicci = new Dictionary<string, object>();
             GestorRO.validarOpcSeleccionada();
 
         }
+
         public void mostrarDatosLlamadaValidacion(Dictionary<string, object> dicci)
         {
             OpcionLlamada opcLlamada = new OpcionLlamada();
@@ -103,99 +137,22 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                 }
             }
         }
-        /* se saca porque al final no aplica un datagridviewComboBox */
-        //private void LlenarGrilla(Validacion valid)
-        //{
-        //    var count = 1;
-
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("NameVal", typeof(String)); 
-        //    dt.Columns.Add("NomSubopc", typeof(String));
-        //    dt.Columns.Add("objVal", typeof(Validacion));
-
-        //    foreach (OpcionValidacion val in valid.OpcValidaciones) 
-        //    { 
-        //        dt.Rows.Add(new Object[] { valid.Nombre,val.Descripcion.ToString(),valid});
-        //    }
-        //    dt1 = dt;
-        //    //dgValidacion.Rows.Add(new object[]
-        //    //    {
-        //    //     valid.Nombre.ToString()
-        //    //    });
-        //    dgValidacion.DataSource = valid;
-
-        //    foreach (DataGridViewRow row in dgValidacion.Rows)
-        //    {
-        //        DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];//
-        //        foreach (DataRow row1 in dt.Rows)
-        //        {
-        //            string nomval = row1[0].ToString();
-
-        //            if (row.Cells[0].Value is null){
-        //                break;
-        //            }
-        //            else
-        //            {
-        //            if (row.Cells[0].Value.ToString() == nomval)
-        //            {
-        //                    cboCell.Items.Add(row1[1]);
-        //                    cboCell.Value = row1[1];
-
-        //            }
-        //            }
-        //        }
-
-
-        //    }
-        //}
-
-        private void panelSuperior_MouseMove(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void horaFecha_Tick(object sender, EventArgs e)
-        {
-            TimeSpan ts = new TimeSpan(0, 0, 0, 0, (int)sW.ElapsedMilliseconds);
-
-            lblHora.Text = ts.Hours.ToString().PadLeft(2, '0');
-            lblMinut.Text = ts.Minutes.ToString().PadLeft(2, '0');
-            lblSeg.Text = ts.Seconds.ToString().PadLeft(2, '0');
-        }
-
-        #endregion
-        private void generarNroAleatorio()
-        {
-            Random random = new Random();
-
-            // Genera un número aleatorio entre 0 y 1
-            int numeroAleatorio = random.Next(2);
-
-            // Asigna el valor 1 o 10 según el número aleatorio generado
-            int valor = numeroAleatorio == 0 ? 1 : 10;
-
-            if (valor == 0 )
-            {
-                MessageBox.Show("El cliente finalizo la llamada..", "Finalizando Llamada", MessageBoxButtons.OK , MessageBoxIcon.Information );
-                Application.Exit();
-            }
-        }
-
+      
         private void btnColgarLlamada_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Esta seguro de desea finalizar la llamada?", "Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
             {
+                new PantallaLlamdaFinalizada().ShowDialog();
                 Application.Exit();
             }
         }
 
-        private void btnValidar_Click(object sender, EventArgs e)
+        //METODO VIEJO OBSOLTO TENIA CIERTOS ERRORES
+        /*private void btnValidar_Click(object sender, EventArgs e)
         {
             Validacion val = dgValidacion.SelectedRows[0].DataBoundItem as Validacion;
             bool valida;
             Dictionary<Validacion,string> dic = new Dictionary<Validacion,string>();
-            //MessageBox.Show(val.Nombre.ToString());
             foreach (DataGridViewRow row in dgValidacion.Rows)
             {
                 //DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];
@@ -210,24 +167,64 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                 }
                 else
                 {
-                    MessageBox.Show("Se deben cargar todas las preguntas antes de enviar a validar");
+                    MessageBox.Show("Se deben cargar todas las respuestas antes de enviar a validar, por favor verifique y vuelva a intentar nuevamente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
                 }
-                //MessageBox.Show(val.Nombre.ToString());
             }
             valida = GestorRO.tomarRstaValidacion(dic);
 
             if (valida)
-            {
-                MessageBox.Show("Se validó todo ok");
+                {
+                    MessageBox.Show("Se validaron las preguntas correctamente, por favor ingrese una descripción y seleccione una acción." +
+                        " A continuación presione el botón CONFIRMAR.","Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else { MessageBox.Show("Cargue respuestas validas"); }
+            else 
+                { 
+                    MessageBox.Show("Alguna/s de las preguntas fue Inválida, por lo cuál esta llamada finalizara", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    new PantallaLlamdaFinalizada().ShowDialog();
+                    this.Close();
+                }
+           
+        }*/
 
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            Dictionary<Validacion, string> dic = new Dictionary<Validacion, string>();
+            foreach (DataGridViewRow row in dgValidacion.Rows)
+            {
+                Validacion val = row.DataBoundItem as Validacion;
+                if (row.Cells[2].Value != null)
+                {
+                    var pregunta = row.Cells[2].Value.ToString();
+                    dic.Add(val, pregunta);
+                    //GestorRO.tomarRstaValidacion()
+                }
+                else
+                {
+                    MessageBox.Show("Se deben cargar todas las respuestas antes de enviar a validar, por favor verifique y vuelva a intentar nuevamente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            bool valida = GestorRO.tomarRstaValidacion(dic);
+
+            if (valida)
+            {
+                MessageBox.Show("Se validaron las preguntas correctamente, por favor ingrese una descripción y seleccione una acción. A continuación presione el botón CONFIRMAR.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                habilitarPanelDescripcion();
+
+            }
+            else
+            {
+                MessageBox.Show("Alguna/s de las preguntas fue Inválida, por lo cuál esta llamada finalizará pronto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new PantallaLlamdaFinalizada().ShowDialog();
+                this.Close();
+            }
         }
 
         public void setValidaciones(List<Validacion> validacion)
         {
-            //this.tarifas = tarifas;
+
             List<Validacion> listValid = new List<Validacion>();
             foreach (Validacion valid in validacion)
             {
@@ -236,8 +233,9 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             dgValidacion.Columns.Clear();
             dgValidacion.DataSource = listValid;
             dgValidacion.Columns["NroOrden"].Visible = false;
-            //DataGridViewColumn column = new DataGridViewColumn();
+
             DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+
             column.CellTemplate = dgValidacion.Columns[1].CellTemplate;
             column.AutoSizeMode = dgValidacion.Columns[1].AutoSizeMode;
             dgValidacion.Columns.Add(column);
@@ -248,7 +246,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         {
             if(e.ColumnIndex == 2)
             {
-                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "valor");
+                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la respuesta del cliente para validar", "Valor");
                 if (!string.IsNullOrEmpty(valor)) {
                   dgValidacion.Rows[e.RowIndex].Cells[2].Value = valor;
                 }
@@ -258,9 +256,9 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                 dgValidacion.Columns[1].ReadOnly = true;
             }
         }
+       
         public void mostrarAcciones(IList<Accion> acciones)
         {
-            //cmbAccion.ValueMember = "Descripcion";
             cmbAccion.DataSource = acciones;
             cmbAccion.DisplayMember = "Descripcion";
             cmbAccion.SelectedIndex = 0;
@@ -270,7 +268,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         {
             if (e.ColumnIndex == 1)
             {
-                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el valor a validar", "VALOR");
+                string valor = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la respuesta del cliente para validar", "Valor");
                 if (!string.IsNullOrEmpty(valor))
                 {
                     dgValidacion.Rows[e.RowIndex].Cells[2].Value = valor;
@@ -282,13 +280,38 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             }
         }
 
-        private void txtDescripcion_Click(object sender, EventArgs e)
+        private void panelDeConfirmar_Click(object sender, EventArgs e)
         {
             if (txtDescripcion.Enabled == false)
             {
                 MessageBox.Show("Esta deshabilitado, por favor valide primero las preguntas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
 
+        private void habilitarPanelDescripcion()
+        {
+            txtDescripcion.Enabled = true;
+            cmbAccion.Enabled = true;
+            cmbAccion.DropDownStyle = ComboBoxStyle.DropDownList;
+            btnConfirmar.ActiveLineColor = Color.FromArgb(30, 137, 70);
+            btnConfirmar.ActiveFillColor = Color.FromArgb(30, 137, 70);
+            
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (txtDescripcion.Enabled == false)
+            {
+                MessageBox.Show("Esta deshabilitado, por favor valide primero las preguntas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var accion = cmbAccion.SelectedItem as Accion;
+                var descripcion = txtDescripcion.Text;
+                GestorRO.tomarConfirmacion(accion);
+                GestorRO.tomarDescripcionOperador(descripcion);
+                MessageBox.Show("Usted confirmo los cambios del cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

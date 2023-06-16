@@ -15,9 +15,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public string Nombre { get => nombre; set => nombre = value; }
         public List<OpcionValidacion> OpcValidaciones { get => opcValidaciones; set => opcValidaciones = value; }
 
-        public Validacion()
-        {
-        }
 
         public Validacion(int nroOrden, string nombre, List<OpcionValidacion> opcValidaciones)
         {
@@ -28,7 +25,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public bool esRstaCorrecta(Validacion val,string respuesta)
         {
-            //OpcionValidacion res = new OpcionValidacion();
             bool res = false;
             foreach(OpcionValidacion opcValidacion in val.OpcValidaciones)
             {
@@ -37,12 +33,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                 if (res) { break; }
             }
             return res;
-
-            //if (res.Descripcion.Equals(respuesta))
-            //{
-            //    return true;
-            //}
-            //else { return false; }
         }
 
     }
