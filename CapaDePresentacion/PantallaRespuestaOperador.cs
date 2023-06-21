@@ -5,21 +5,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Diagnostics;
 using PPAI_IVR_Grupo8.CapaLogicaDeNegocio;
-using System.Xml.Linq;
-using System.Windows.Controls;
-using PPAI_IVR_Grupo8.EntityLayer;
-using System.Diagnostics.Eventing.Reader;
-using System.Management.Instrumentation;
-using System.Drawing.Text;
-using Newtonsoft.Json.Linq;
 //using Windows.UI.Xaml.Controls;
 
 namespace PPAI_IVR_Grupo8.CapaDePresentacion
@@ -28,17 +16,20 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
     {
  
         Stopwatch sW = new Stopwatch();
-        GestorRespuestaOperador GestorRO;
+        GestorRespuestaOperador gestorRespuestaOperador;
         DataTable dt1 = new DataTable();
         private static PantallaRespuestaOperador instance = new PantallaRespuestaOperador(); //Implemento el Singleton
         public PantallaRespuestaOperador()
         {
             InitializeComponent();
             //generarNroAleatorio();
-            GestorRO = new GestorRespuestaOperador();
-            dgValidacion.Rows.Clear();
+            gestorRespuestaOperador = new GestorRespuestaOperador();
+            
+            //new PantallaRespuestaOperador(gestorRespuestaOperador);
+            //dgValidacion.Rows.Clear();
 
         }
+        
         public static PantallaRespuestaOperador GetInstance()
         {
             if (instance == null)
@@ -99,7 +90,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         {
             sW.Start();
             Dictionary<string, object> dicci = new Dictionary<string, object>();
-            GestorRO.validarOpcSeleccionada();
+            gestorRespuestaOperador.validarOpcionSeleccionada();
 
         }
 
@@ -206,7 +197,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                 }
             }
 
-            bool valida = GestorRO.tomarRstaValidacion(dic);
+            bool valida = gestorRespuestaOperador.tomarRstaValidacion(dic);
 
             if (valida)
             {
@@ -299,6 +290,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
+        
         {
             if (txtDescripcion.Enabled == false)
             {
@@ -308,8 +300,8 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             {
                 var accion = cmbAccion.SelectedItem as Accion;
                 var descripcion = txtDescripcion.Text;
-                GestorRO.tomarConfirmacion(accion);
-                GestorRO.tomarDescripcionOperador(descripcion);
+                gestorRespuestaOperador.tomarConfirmacion(accion);
+                gestorRespuestaOperador.tomarDescripcionOperador(descripcion);
                 MessageBox.Show("Usted confirmo los cambios del cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

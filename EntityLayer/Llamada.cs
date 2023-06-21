@@ -27,7 +27,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public int Duracion { get => duracion; set => duracion = value; }
         public string ObservacionAuditor { get => observacionAuditor; set => observacionAuditor = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
-        public List<CambioEstado> Lcambioestado { get => lcambioestado; set => lcambioestado = value; }
+        public List<CambioEstado> ListaCambioEstado { get => lcambioestado; set => lcambioestado = value; }
         public OpcionLlamada Seleccionadaopc { get => seleccionadaopc; set => seleccionadaopc = value; }
         public SubOpcionLlamada SeleccionadaSubopc { get => seleccionadaSubopc; set => seleccionadaSubopc = value; }
         public Accion AccionRequerida { get => accionRequerida; set => accionRequerida = value; }
@@ -71,22 +71,21 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return actualLLamada;
         }
 
-        public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso)
+        public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso, DateTime fechaHoraActual) // todo: verificar que se cambien el nombre en diagrama secuencia
         {
-            actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today,enCurso));
-
+            actualLlamada.ListaCambioEstado.Add(new CambioEstado(fechaHoraActual, enCurso));
         }
 
         public void finalizar(Llamada actualLlamada, Estado finalizado)
         {
-            actualLlamada.Lcambioestado.Add(new CambioEstado(DateTime.Today, finalizado));
+            actualLlamada.ListaCambioEstado.Add(new CambioEstado(DateTime.Today, finalizado));
 
         }
 
 
         public void calcularDuracion(Llamada actualLlamada, DateTime fechafinalizacion) 
         {
-            var fechamin = obtenerFechaHoraMinima(actualLlamada.Lcambioestado);
+            var fechamin = obtenerFechaHoraMinima(actualLlamada.ListaCambioEstado);
             var duracion = fechafinalizacion.Subtract(fechamin);
             actualLlamada.Duracion = Convert.ToInt16(duracion);
         }
@@ -99,7 +98,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         
         }
 
-        public static Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
+        public Dictionary<String, object> tomarDatosLlamada(Llamada actualLlamada, List<CategoriaLlamada> cat)
         {
             Dictionary<string,object> dic = new Dictionary<string,object>();
 
@@ -116,7 +115,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public static String getNombreClienteLlamada(Cliente cliente)
         {
-            return cliente.NombreCompleto1; // donde esta la instancia de este cliente ? 
+            return cliente.NombreCompleto1; 
         }
     }
 }

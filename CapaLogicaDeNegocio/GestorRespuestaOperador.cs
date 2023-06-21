@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PPAI_IVR_Grupo8.EntityLayer; //ADD
 using PPAI_IVR_Grupo8.CapaDePresentacion;//ADD
+using System.ServiceModel.Channels;
+using System.Windows;
 //using System.DateTime;
 
 namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
@@ -15,7 +17,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         Cliente clienteAct;
         List<CambioEstado> listCambioEstado = new List<CambioEstado>();
-        List<Estado>ListEstados = new List<Estado>();
+        List<Estado>ListaDeEstados = new List<Estado>();
         CambioEstado cambioEstado1;
         Estado estadoIniciada;
         Estado estadoEnCurso;
@@ -97,7 +99,7 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         CategoriaLlamada categoriaLlamada3;
         CategoriaLlamada categoriaLlamada4;
         CategoriaLlamada categoriaLlamada5;
-        List<CategoriaLlamada> listCategoriaLlamada1 = new List<CategoriaLlamada>();
+        List<CategoriaLlamada> listaDeCategoriaLlamada = new List<CategoriaLlamada>();
         Accion accion1;
         Accion accion2;
         Accion accion3;
@@ -106,10 +108,14 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         #endregion
 
-        Llamada llamadaAct; //Esta es la llamada en curso
+        Llamada llamadaActual; //Esta es la llamada en curso
 
         public GestorRespuestaOperador ()//PantallaRespuestaOperador pantalla)
         {
+            // listaDeEstados
+            //listaDeCategorias
+            //listaDeAcciones
+
             //this.Pantalla = pantalla;
             #region Objetos Hardcode
 
@@ -138,9 +144,9 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             listCambioEstado.Add(cambioEstado1);
 
             //llenamos la lista de todos los estados
-            ListEstados.Add(estadoEnCurso);
-            ListEstados.Add(estadoFinalizado);
-            ListEstados.Add(estadoIniciada);
+            ListaDeEstados.Add(estadoEnCurso);
+            ListaDeEstados.Add(estadoFinalizado);
+            ListaDeEstados.Add(estadoIniciada);
             #endregion
 
             #region OPCIONES VALIDACION
@@ -308,14 +314,14 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             categoriaLlamada4 = new CategoriaLlamada(4, "Si desea realizar modificaciones en los limites de la tarjeta marque 4", listOpcionLlamada4);
             categoriaLlamada5 = new CategoriaLlamada(5, "Si desea finalizar la llamada marque 5", null);
 
-            listCategoriaLlamada1.Add(categoriaLlamada1);
-            listCategoriaLlamada1.Add(categoriaLlamada2);
-            listCategoriaLlamada1.Add(categoriaLlamada3);
-            listCategoriaLlamada1.Add(categoriaLlamada4);
-            listCategoriaLlamada1.Add(categoriaLlamada5);
+            listaDeCategoriaLlamada.Add(categoriaLlamada1);
+            listaDeCategoriaLlamada.Add(categoriaLlamada2);
+            listaDeCategoriaLlamada.Add(categoriaLlamada3);
+            listaDeCategoriaLlamada.Add(categoriaLlamada4);
+            listaDeCategoriaLlamada.Add(categoriaLlamada5);
             #endregion 
 
-            llamadaAct = new Llamada(
+            llamadaActual = new Llamada(
                 null,
                 null,
                 0,
@@ -329,59 +335,59 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             #endregion
 
         }
-        public void validarOpcSeleccionada()
+
+        public void validarOpcionSeleccionada()
         {
-            var dicDatosLlamada = new Dictionary<string, object>();
+            var diccionarioDatosLlamada = new Dictionary<string, object>();
+            Estado estadoEnCurso = obtenerEstadoEnCurso(ListaDeEstados); //Cambiar nombre en el diadrama de sec
+            marcarllamadaEnCurso(estadoEnCurso);
 
-            Estado eEnCurso = new Estado();
-            eEnCurso = obtenerEstadoEnCurso(ListEstados); //Cambiar nombre en el diadrama de sec
-            marcarllamadaEnCurso(eEnCurso);
-
-            dicDatosLlamada = buscarDatosLlamada();
-            PantallaRespuestaOperador.GetInstance().mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);
+            diccionarioDatosLlamada = buscarDatosLlamada();
+            PantallaRespuestaOperador.GetInstance().mostrarDatosLlamadaValidacion(diccionarioDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);
         }
 
-        private Estado obtenerEstadoEnCurso(List<Estado> lestado)
+        private Estado obtenerEstadoEnCurso(List<Estado> listaDeEstados)
         {
-            Estado estadoEnCurso = new Estado();
-            estadoEnCurso = estadoEnCurso.esEnCurso(lestado);
-            return estadoEnCurso;// deberiamos llamara al metodo esEnCurso
-            // deberiamos llamara al metodo esDeTucliente
+            foreach(Estado estado in listaDeEstados) {
+                if (estado.esEnCurso()) 
+                    return estado;
+            }
+            return null;
         }
 
-        private void marcarllamadaEnCurso(Estado estEnCurso)
+        private void marcarllamadaEnCurso(Estado estadoEnCurso)
         {
-            llamadaAct.setLlamadaEnCurso(llamadaAct, estEnCurso);
+            llamadaActual.setLlamadaEnCurso(llamadaActual, estadoEnCurso, this.obtenerFechaHoraActual());
         }
 
         private DateTime obtenerFechaHoraActual()
         {
-            return DateTime.Today; //revisar si esta bien aplicado el patron altacohesion porque esto lo esta obteniendo en la clase
+            return DateTime.Today;
         }
 
         private Dictionary<string,object> buscarDatosLlamada()
         {
-            Dictionary<string,object> dicDatosLlamada = new Dictionary<string,object>();
+            Dictionary<string,object> diccionarioDatosLlamada = new Dictionary<string,object>();
 
-            dicDatosLlamada = Llamada.tomarDatosLlamada(llamadaAct, listCategoriaLlamada1);
+            diccionarioDatosLlamada = llamadaActual.tomarDatosLlamada(llamadaActual, listaDeCategoriaLlamada);
             //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
-            foreach (KeyValuePair<string, object> subopcSel in llamadaAct.SeleccionadaSubopc.getDatosSubOpc(llamadaAct.SeleccionadaSubopc))
+            foreach (KeyValuePair<string, object> subopcSel in llamadaActual.SeleccionadaSubopc.getDatosSubOpc(llamadaActual.SeleccionadaSubopc))
             {
-                dicDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
+                diccionarioDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
             }
 
-            return dicDatosLlamada;
+            return diccionarioDatosLlamada;
         }
 
         public  bool tomarRstaValidacion(Dictionary<Validacion, string> respuesta)
         {
-            PantallaRespuestaOperador.GetInstance().mostrarAcciones(accionList); //Esto lo tiene que mostrar si es qeu valido todo ok
+            PantallaRespuestaOperador.GetInstance().mostrarAcciones(accionList);
             return validarRespuesta(respuesta);
         }
 
         private bool validarRespuesta(Dictionary<Validacion, string> dicc)
         {
-            return llamadaAct.SeleccionadaSubopc.ObtenerRstasValidacion(dicc);
+            return llamadaActual.SeleccionadaSubopc.ObtenerRstasValidacion(dicc);
         }
 
         public void tomarConfirmacion(Accion accion)
@@ -389,15 +395,15 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             llamarCURegistrarAccionRequerida(accion);
         }
 
-        public void llamarCURegistrarAccionRequerida(Accion accion) //VER PORQUE NO TIENE MISMO NOMBRE QUE EN DIAGRAMA
+        public void llamarCURegistrarAccionRequerida(Accion accion)
         {
-            llamadaAct.AccionRequerida = accion;// se instancia al caso de uso 28 //COMPLETAR
+            llamadaActual.AccionRequerida = accion;// se instancia al caso de uso 28 //COMPLETAR
         }
 
 
         public void tomarDescripcionOperador(string descripcion)
         {
-            Estado finalizado = buscarEstadoFinalizado(ListEstados);
+            Estado finalizado = buscarEstadoFinalizado(ListaDeEstados);
             registrarFinalizacionLlamada(finalizado, descripcion);
 
         }
@@ -412,15 +418,10 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
         private void registrarFinalizacionLlamada(Estado finalizado, String descripcionOperador)
         {
             DateTime fechaActual = obtenerFechaHoraActual();
-            llamadaAct.finalizar(llamadaAct, finalizado);
-            llamadaAct.calcularDuracion(llamadaAct,fechaActual);
-            llamadaAct.DescripcionOperador = descripcionOperador;
+            llamadaActual.finalizar(llamadaActual, finalizado);
+            llamadaActual.calcularDuracion(llamadaActual, fechaActual);
+            llamadaActual.DescripcionOperador = descripcionOperador;
     
-        }
-
-        public void tomarDescripcionAccion()
-        {
-
         }
 
     }

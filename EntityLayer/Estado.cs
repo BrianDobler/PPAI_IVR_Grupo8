@@ -40,6 +40,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             return false;
         }
 
+        /*
         public Estado esEnCurso (List<Estado> lestado)
         {
             Estado state = new Estado();
@@ -52,6 +53,10 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                 }
             }
             return state;
+        }*/
+
+        public Boolean esEnCurso() {
+            return (this.nombre.Equals("enCurso")) ? true : false;
         }
 
     }

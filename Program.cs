@@ -1,4 +1,5 @@
 ﻿using PPAI_IVR_Grupo8.CapaDePresentacion;
+using PPAI_IVR_Grupo8.CapaLogicaDeNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,10 @@ namespace PPAI_IVR_Grupo8
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new PantallaLlamadaEntrante());
+            // todo: revisar forma de levantar pantalla sin singleton 
+            //Application.Run(new PantallaRespuestaOperador(new GestorRespuestaOperador()));
+            
             Application.Run(PantallaRespuestaOperador.GetInstance());
-           
         }
     }
 }
