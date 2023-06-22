@@ -112,6 +112,10 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
 
         public GestorRespuestaOperador ()//PantallaRespuestaOperador pantalla)
         {
+            this.comunicarConOperador();
+        }
+
+        public void comunicarConOperador() {
             // listaDeEstados
             //listaDeCategorias
             //listaDeAcciones
@@ -331,10 +335,8 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
                 opcionLlamada1,
                 subopcion1,
                 null);
-
-            #endregion
-
         }
+        #endregion
 
         public void validarOpcionSeleccionada()
         {

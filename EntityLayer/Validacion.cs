@@ -25,14 +25,12 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public bool esRstaCorrecta(Validacion val,string respuesta)
         {
-            bool res = false;
             foreach(OpcionValidacion opcValidacion in val.OpcValidaciones)
             {
-                res = opcValidacion.esCorrecta(opcValidacion, respuesta); //ideadoi para buscar una sola respuesta correcta entre muchas opciones validacion. si es ok me trae el objeto
-               
-                if (res) { break; }
+                if (opcValidacion.esCorrecta(opcValidacion, respuesta))
+                    return true;
             }
-            return res;
+            return false;
         }
 
     }

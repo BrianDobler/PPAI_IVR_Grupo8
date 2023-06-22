@@ -28,7 +28,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         public string ObservacionAuditor { get => observacionAuditor; set => observacionAuditor = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
         public List<CambioEstado> ListaCambioEstado { get => lcambioestado; set => lcambioestado = value; }
-        public OpcionLlamada Seleccionadaopc { get => seleccionadaopc; set => seleccionadaopc = value; }
+        public OpcionLlamada seleccionada { get => seleccionadaopc; set => seleccionadaopc = value; }
         public SubOpcionLlamada SeleccionadaSubopc { get => seleccionadaSubopc; set => seleccionadaSubopc = value; }
         public Accion AccionRequerida { get => accionRequerida; set => accionRequerida = value; }
 
@@ -57,6 +57,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
         }
 
+        /**** todo: validar si podemos remover esto. 
         public static Llamada esDeTuCliente(List<Llamada> lLlamada, Cliente clt)
         {
             Llamada actualLLamada = new Llamada();
@@ -69,9 +70,9 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
             }
             return actualLLamada;
-        }
+        } */
 
-        public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso, DateTime fechaHoraActual) // todo: verificar que se cambien el nombre en diagrama secuencia
+        public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso, DateTime fechaHoraActual)
         {
             actualLlamada.ListaCambioEstado.Add(new CambioEstado(fechaHoraActual, enCurso));
         }
@@ -102,12 +103,12 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             Dictionary<string,object> dic = new Dictionary<string,object>();
 
-            var nomCliente = getNombreClienteLlamada(actualLlamada.Cliente);
-            var nomOpc = actualLlamada.Seleccionadaopc;
-            var cte = OpcionLlamada.esCategoriaCte(actualLlamada.Seleccionadaopc, cat); 
+            var nombreCliente = getNombreClienteLlamada(actualLlamada.Cliente);
+            var listaOpcion = actualLlamada.seleccionada;
+            var cte = seleccionada.esCategoriaCte(listaOpcion, cat); 
 
-            dic.Add("Nom_cliente", nomCliente);
-            dic.Add("Opcion", nomOpc);
+            dic.Add("Nom_cliente", nombreCliente);
+            dic.Add("Opcion", listaOpcion);
             dic.Add("Categoria", cte);
 
            return dic;

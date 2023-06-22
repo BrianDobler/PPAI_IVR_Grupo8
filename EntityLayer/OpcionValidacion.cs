@@ -22,13 +22,10 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public bool esCorrecta(OpcionValidacion val, string respuesta)
         {
-            bool res;
-            if (val.Correcta == true && val.descripcion.ToUpper().Equals(respuesta.ToUpper())) 
-            {
-                res = true;
-            }
-            else { res = false; }
-            return res;
+            if (val.Correcta == true && val.descripcion.ToUpper().Equals(respuesta.ToUpper()))
+                return true;
+            else 
+                return false;
         }
 
     }

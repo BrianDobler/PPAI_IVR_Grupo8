@@ -28,13 +28,12 @@ namespace PPAI_IVR_Grupo8.EntityLayer
 
         public Dictionary<String, object> getDatosSubOpc(SubOpcionLlamada subOpcionLlamadaSeleccionada)
         {
-            Dictionary<String, object> dictionary = new Dictionary<string, object>();
-            dictionary.Add("Nombre_sopc", subOpcionLlamadaSeleccionada.Nombre);
-            dictionary.Add("Orden_sopc", subOpcionLlamadaSeleccionada.NroOrden);
-            //var count = 0;
-            dictionary.Add("listValidacion", subOpcionLlamadaSeleccionada.LValidacion);
+            Dictionary<String, object> diccionarioDatosSubOpcion = new Dictionary<string, object>();
+            diccionarioDatosSubOpcion.Add("Nombre_sopc", subOpcionLlamadaSeleccionada.Nombre);
+            diccionarioDatosSubOpcion.Add("Orden_sopc", subOpcionLlamadaSeleccionada.NroOrden);
+            diccionarioDatosSubOpcion.Add("listValidacion", subOpcionLlamadaSeleccionada.LValidacion);
 
-            return dictionary;
+            return diccionarioDatosSubOpcion;
         }
 
         public bool ObtenerRstasValidacion(Dictionary<Validacion, string> param)

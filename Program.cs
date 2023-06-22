@@ -19,9 +19,7 @@ namespace PPAI_IVR_Grupo8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new PantallaLlamadaEntrante());
-            // todo: revisar forma de levantar pantalla sin singleton 
-            //Application.Run(new PantallaRespuestaOperador(new GestorRespuestaOperador()));
+            Application.Run(new PantallaLlamadaEntrante());
             
             Application.Run(PantallaRespuestaOperador.GetInstance());
         }

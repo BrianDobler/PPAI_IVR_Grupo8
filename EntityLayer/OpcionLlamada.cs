@@ -29,24 +29,16 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             this.lvalidacion = lvalidacion;
         }
 
-        public static CategoriaLlamada esCategoriaCte(OpcionLlamada opcSeleccionada, List<CategoriaLlamada> cat)
+        public CategoriaLlamada esCategoriaCte(OpcionLlamada opcSeleccionada, List<CategoriaLlamada> listaCategorias)
         {
-        CategoriaLlamada ct = new CategoriaLlamada();
-           foreach(CategoriaLlamada c in cat)
+            foreach(CategoriaLlamada itemCategoria in listaCategorias)
             {
-                    var res = CategoriaLlamada.esCategoriaSeleccionada(opcSeleccionada,c);
-
-                    if (res)
-                    {
-                        ct = c;
-                        break;
-                    }
+                if (itemCategoria.esCategoriaSeleccionada(opcSeleccionada, itemCategoria)) {
+                    return itemCategoria;
                 }
-           return ct;
+            }
+            return null;
 
-           }
-        //{
-
-        //}
+        }
     }
 }

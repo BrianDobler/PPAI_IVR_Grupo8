@@ -94,37 +94,37 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
 
         }
 
-        public void mostrarDatosLlamadaValidacion(Dictionary<string, object> dicci)
+        public void mostrarDatosLlamadaValidacion(Dictionary<string, object> datosLlamada)
         {
             OpcionLlamada opcLlamada = new OpcionLlamada();
             CategoriaLlamada catLlamada = new CategoriaLlamada();
             SubOpcionLlamada subOpcLlamada = new SubOpcionLlamada();
 
-            foreach (KeyValuePair<string, object> datos in dicci)
+            foreach (KeyValuePair<string, object> dato in datosLlamada)
             {
-                if (datos.Key == "Nom_cliente")
+                if (dato.Key == "Nom_cliente")
                 {
-                    lblNombreCliente.Text = datos.Value.ToString();
+                    lblNombreCliente.Text = dato.Value.ToString();
                 }
-                else if (datos.Key == "Opcion")
+                else if (dato.Key == "Opcion")
                 {
 
-                    opcLlamada = (OpcionLlamada)datos.Value;
+                    opcLlamada = (OpcionLlamada)dato.Value;
                     lblOpcion.Text = opcLlamada.NroOrden.ToString();
                 }
-                else if (datos.Key == "Categoria")
+                else if (dato.Key == "Categoria")
                 {
-                    catLlamada = (CategoriaLlamada)datos.Value;
+                    catLlamada = (CategoriaLlamada)dato.Value;
                     lblCategoria.Text = catLlamada.NroOrden.ToString();
                 }
 
-                else if (datos.Key == "Orden_sopc")
+                else if (dato.Key == "Orden_sopc")
                 {
-                    lblSubOpcion.Text = datos.Value.ToString();
+                    lblSubOpcion.Text = dato.Value.ToString();
                 }
-                else if (datos.Key == "listValidacion")
+                else if (dato.Key == "listValidacion")
                 {
-                    setValidaciones((List<Validacion>)datos.Value);
+                    setValidaciones((List<Validacion>)dato.Value);
                 }
             }
         }
@@ -138,47 +138,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
             }
         }
 
-        //METODO VIEJO OBSOLTO TENIA CIERTOS ERRORES
-        /*private void btnValidar_Click(object sender, EventArgs e)
-        {
-            Validacion val = dgValidacion.SelectedRows[0].DataBoundItem as Validacion;
-            bool valida;
-            Dictionary<Validacion,string> dic = new Dictionary<Validacion,string>();
-            foreach (DataGridViewRow row in dgValidacion.Rows)
-            {
-                //DataGridViewComboBoxCell cboCell = (DataGridViewComboBoxCell)row.Cells[1];
-                val = dgValidacion.Rows[row.Index].DataBoundItem as Validacion;
-                if (row.Cells[2].Value != null)
-                {
-                    val = dgValidacion.Rows[row.Index].DataBoundItem as Validacion;
-                    var pregunta = row.Cells[2].Value.ToString();
-                    dic.Add(val, pregunta);
-                    MessageBox.Show(row.Cells[2].Value.ToString());
-                    //GestorRO.tomarRstaValidacion()
-                }
-                else
-                {
-                    MessageBox.Show("Se deben cargar todas las respuestas antes de enviar a validar, por favor verifique y vuelva a intentar nuevamente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    break;
-                }
-            }
-            valida = GestorRO.tomarRstaValidacion(dic);
-
-            if (valida)
-                {
-                    MessageBox.Show("Se validaron las preguntas correctamente, por favor ingrese una descripción y seleccione una acción." +
-                        " A continuación presione el botón CONFIRMAR.","Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else 
-                { 
-                    MessageBox.Show("Alguna/s de las preguntas fue Inválida, por lo cuál esta llamada finalizara", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    new PantallaLlamdaFinalizada().ShowDialog();
-                    this.Close();
-                }
-           
-        }*/
-
-        private void btnValidar_Click(object sender, EventArgs e)
+        private void btnValidar_Click(object sender, EventArgs e) // seria el metodo tomarRstaValidacion , por definicion de c# lo dejamos como btnValidar
         {
             Dictionary<Validacion, string> dic = new Dictionary<Validacion, string>();
             foreach (DataGridViewRow row in dgValidacion.Rows)
