@@ -148,7 +148,7 @@ namespace PPAI_IVR_Grupo8.CapaDePresentacion
                 {
                     var pregunta = row.Cells[2].Value.ToString();
                     dic.Add(val, pregunta);
-                    //GestorRO.tomarRstaValidacion()
+                    //gestorRespuestaOperador.tomarRstaValidacion(dic);
                 }
                 else
                 {

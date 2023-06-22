@@ -21,8 +21,11 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             Nombre = nombre;
         }
 
-        public Estado esFinalizada(List<Estado> lestado)
+        public Boolean esFinalizada()
         {
+            return (this.nombre.Equals("Finalizada")) ? true : false;
+            
+            /*
             Estado finalizado = new Estado();
             foreach (Estado estado in lestado)
             {
@@ -32,10 +35,10 @@ namespace PPAI_IVR_Grupo8.EntityLayer
                     break;
                 }
             }
-            return finalizado;
+            return finalizado;*/
         }
 
-        public static Boolean esIniciada()
+        public Boolean esIniciada()
         {
             return false;
         }

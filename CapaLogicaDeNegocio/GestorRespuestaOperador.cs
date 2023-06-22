@@ -115,7 +115,103 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
             this.comunicarConOperador();
         }
 
-        public void comunicarConOperador() {
+        public void validarOpcionSeleccionada()
+        {
+            var diccionarioDatosLlamada = new Dictionary<string, object>();
+            Estado estadoEnCurso = obtenerEstadoEnCurso(ListaDeEstados); //Cambiar nombre en el diadrama de sec
+            marcarllamadaEnCurso(estadoEnCurso);
+
+            diccionarioDatosLlamada = buscarDatosLlamada();
+            PantallaRespuestaOperador.GetInstance().mostrarDatosLlamadaValidacion(diccionarioDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);
+        }
+
+        private Estado obtenerEstadoEnCurso(List<Estado> listaDeEstados)
+        {
+            foreach(Estado estado in listaDeEstados) {
+                if (estado.esEnCurso()) 
+                    return estado;
+            }
+            return null;
+        }
+
+        private void marcarllamadaEnCurso(Estado estadoEnCurso)
+        {
+            llamadaActual.setLlamadaEnCurso(llamadaActual, estadoEnCurso, this.obtenerFechaHoraActual());
+        }
+
+        private DateTime obtenerFechaHoraActual()
+        {
+            return DateTime.Today;
+        }
+
+        private Dictionary<string,object> buscarDatosLlamada()
+        {
+            Dictionary<string,object> diccionarioDatosLlamada = new Dictionary<string,object>();
+
+            diccionarioDatosLlamada = llamadaActual.tomarDatosLlamada(llamadaActual, listaDeCategoriaLlamada);
+            //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
+            foreach (KeyValuePair<string, object> subopcSel in llamadaActual.SeleccionadaSubopc.getDatosSubOpc(llamadaActual.SeleccionadaSubopc))
+            {
+                diccionarioDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
+            }
+
+            return diccionarioDatosLlamada;
+        }
+
+        public  bool tomarRstaValidacion(Dictionary<Validacion, string> respuesta)
+        {
+            PantallaRespuestaOperador.GetInstance().mostrarAcciones(accionList);
+            return validarRespuesta(respuesta);
+        }
+
+        private bool validarRespuesta(Dictionary<Validacion, string> dicc)
+        {
+            return llamadaActual.SeleccionadaSubopc.ObtenerRstasValidacion(dicc);
+        }
+
+        public void tomarConfirmacion(Accion accion)
+        {
+            llamarCURegistrarAccionRequerida(accion);
+        }
+
+        public void llamarCURegistrarAccionRequerida(Accion accion)
+        {
+            llamadaActual.AccionRequerida = accion;// se instancia al caso de uso 28 //COMPLETAR
+        }
+
+
+        public void tomarDescripcionOperador(string descripcion)
+        {
+            Estado finalizado = buscarEstadoFinalizado(ListaDeEstados);
+            registrarFinalizacionLlamada(finalizado, descripcion);
+
+        }
+
+        private Estado buscarEstadoFinalizado(List<Estado> lestado)
+        {
+            foreach(Estado estado in lestado) {
+                if (estado.esFinalizada()) return estado;
+            }
+            return null;
+
+            /*+ todo: remover y revisar con diagrama
+            Estado finalizado = new Estado();
+            finalizado = finalizado.esFinalizada(lestado);
+            return finalizado;*/
+        }
+
+        private void registrarFinalizacionLlamada(Estado finalizado, String descripcionOperador)
+        {
+            DateTime fechaActual = obtenerFechaHoraActual();
+            llamadaActual.finalizar(llamadaActual, finalizado);
+            llamadaActual.calcularDuracion(llamadaActual, fechaActual);
+            llamadaActual.DescripcionOperador = descripcionOperador;
+            Console.WriteLine("Salida exitosa:" + llamadaActual.ToString());
+    
+        }
+
+        public void comunicarConOperador()
+        {
             // listaDeEstados
             //listaDeCategorias
             //listaDeAcciones
@@ -337,94 +433,6 @@ namespace PPAI_IVR_Grupo8.CapaLogicaDeNegocio
                 null);
         }
         #endregion
-
-        public void validarOpcionSeleccionada()
-        {
-            var diccionarioDatosLlamada = new Dictionary<string, object>();
-            Estado estadoEnCurso = obtenerEstadoEnCurso(ListaDeEstados); //Cambiar nombre en el diadrama de sec
-            marcarllamadaEnCurso(estadoEnCurso);
-
-            diccionarioDatosLlamada = buscarDatosLlamada();
-            PantallaRespuestaOperador.GetInstance().mostrarDatosLlamadaValidacion(diccionarioDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);//Pantalla.mostrarDatosLlamadaValidacion(dicDatosLlamada);
-        }
-
-        private Estado obtenerEstadoEnCurso(List<Estado> listaDeEstados)
-        {
-            foreach(Estado estado in listaDeEstados) {
-                if (estado.esEnCurso()) 
-                    return estado;
-            }
-            return null;
-        }
-
-        private void marcarllamadaEnCurso(Estado estadoEnCurso)
-        {
-            llamadaActual.setLlamadaEnCurso(llamadaActual, estadoEnCurso, this.obtenerFechaHoraActual());
-        }
-
-        private DateTime obtenerFechaHoraActual()
-        {
-            return DateTime.Today;
-        }
-
-        private Dictionary<string,object> buscarDatosLlamada()
-        {
-            Dictionary<string,object> diccionarioDatosLlamada = new Dictionary<string,object>();
-
-            diccionarioDatosLlamada = llamadaActual.tomarDatosLlamada(llamadaActual, listaDeCategoriaLlamada);
-            //el metodo para traer el nombre de la categoria ver si realmente es necesario porque ya aca le puedo pasar el nombre al front.
-            foreach (KeyValuePair<string, object> subopcSel in llamadaActual.SeleccionadaSubopc.getDatosSubOpc(llamadaActual.SeleccionadaSubopc))
-            {
-                diccionarioDatosLlamada.Add(subopcSel.Key, subopcSel.Value); // hago la union de los dos diccionarios, los dos del mismo tipo clave,valor
-            }
-
-            return diccionarioDatosLlamada;
-        }
-
-        public  bool tomarRstaValidacion(Dictionary<Validacion, string> respuesta)
-        {
-            PantallaRespuestaOperador.GetInstance().mostrarAcciones(accionList);
-            return validarRespuesta(respuesta);
-        }
-
-        private bool validarRespuesta(Dictionary<Validacion, string> dicc)
-        {
-            return llamadaActual.SeleccionadaSubopc.ObtenerRstasValidacion(dicc);
-        }
-
-        public void tomarConfirmacion(Accion accion)
-        {
-            llamarCURegistrarAccionRequerida(accion);
-        }
-
-        public void llamarCURegistrarAccionRequerida(Accion accion)
-        {
-            llamadaActual.AccionRequerida = accion;// se instancia al caso de uso 28 //COMPLETAR
-        }
-
-
-        public void tomarDescripcionOperador(string descripcion)
-        {
-            Estado finalizado = buscarEstadoFinalizado(ListaDeEstados);
-            registrarFinalizacionLlamada(finalizado, descripcion);
-
-        }
-
-        private Estado buscarEstadoFinalizado(List<Estado> lestado)
-        {
-            Estado finalizado = new Estado();
-            finalizado = finalizado.esFinalizada(lestado);
-            return finalizado;
-        }
-
-        private void registrarFinalizacionLlamada(Estado finalizado, String descripcionOperador)
-        {
-            DateTime fechaActual = obtenerFechaHoraActual();
-            llamadaActual.finalizar(llamadaActual, finalizado);
-            llamadaActual.calcularDuracion(llamadaActual, fechaActual);
-            llamadaActual.DescripcionOperador = descripcionOperador;
-    
-        }
 
     }
 }

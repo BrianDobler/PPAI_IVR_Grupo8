@@ -57,21 +57,6 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
         }
 
-        /**** todo: validar si podemos remover esto. 
-        public static Llamada esDeTuCliente(List<Llamada> lLlamada, Cliente clt)
-        {
-            Llamada actualLLamada = new Llamada();
-            foreach (Llamada ll in lLlamada)
-            {
-                if (ll.Cliente.Equals(clt))
-                {
-                    actualLLamada = ll;
-                }
-
-            }
-            return actualLLamada;
-        } */
-
         public void setLlamadaEnCurso(Llamada actualLlamada,Estado enCurso, DateTime fechaHoraActual)
         {
             actualLlamada.ListaCambioEstado.Add(new CambioEstado(fechaHoraActual, enCurso));
@@ -88,7 +73,7 @@ namespace PPAI_IVR_Grupo8.EntityLayer
         {
             var fechamin = obtenerFechaHoraMinima(actualLlamada.ListaCambioEstado);
             var duracion = fechafinalizacion.Subtract(fechamin);
-            actualLlamada.Duracion = Convert.ToInt16(duracion);
+            actualLlamada.Duracion = (int)duracion.TotalMinutes;
         }
 
         public DateTime obtenerFechaHoraMinima(List<CambioEstado> lCestado) 

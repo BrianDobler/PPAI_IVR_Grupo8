@@ -42,8 +42,8 @@ namespace PPAI_IVR_Grupo8.EntityLayer
             foreach(KeyValuePair<Validacion, string> validacion in param) {
                 Validacion valid = validacion.Key;
                 res = valid.esRstaCorrecta(validacion.Key, validacion.Value);
+                if (!res) break;
             }
-
             return res;
         }
 
